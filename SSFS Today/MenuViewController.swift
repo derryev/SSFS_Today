@@ -11,9 +11,7 @@ import UIKit
 class MenuViewController: UIViewController {
 
     var menu = Menu()
-    
-    var weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-    
+    let today = DateFunctions()
     
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -42,7 +40,7 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dayOfWeek()
+        setMenuLabels()
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(sender:)))
         leftSwipe.direction = .left
         view.addGestureRecognizer(leftSwipe)
@@ -64,30 +62,10 @@ class MenuViewController: UIViewController {
         
     }
     
-    func dayOfWeek() {
-        var dayString = String()
-        var dayBool = Bool()
-        let dayOfWeek = getCurrentDay()
-        if dayOfWeek! == 2 {
-            dayString = "MONDAY(.*?)TUESDAY"
-            dayBool = false
-        } else if dayOfWeek == 3 {
-            dayString = "TUESDAY(.*?)WEDNESDAY"
-            dayBool = false
-        } else if dayOfWeek == 4 {
-            dayString = "WEDNESDAY(.*?)THURSDAY"
-            dayBool = false
-        } else if dayOfWeek == 5 {
-            dayString = "THURSDAY(.*?)FRIDAY"
-            dayBool = false
-        } else if dayOfWeek == 6 {
-            dayString = "FRIDAY(.*)"
-            dayBool = true
-        }
-        // This function links the return from the getCurrentDay function to the corresponding weekday and gets the information for the day by using the words in between that day and the following. Claire Youmans created this function, I edited the if statements to correspond with my getCurrentDay function.
-        let day = DailyMenu(regExText: dayString, isFriday: dayBool)
-        dateLabel.text = weekdays[dayOfWeek! - 2]
-        // dayOfWeek starts at 2 (becuase Monday is returned as Optional(2) in the getCurrentDay function. So to make it correspond with the weekdays variable, there is a "- 2" so that the weekdays align.
+    func setMenuLabels() {
+       
+        let day = DailyMenu()
+        dateLabel.text = today.today()
         lunchEntreeText.text = day.lunchEntree
         vegetarianEntreeText.text = day.vegetarianEntree
         sidesText.text = day.sides
@@ -102,15 +80,7 @@ class MenuViewController: UIViewController {
             self.present(vc, animated: false, completion: nil)
         }
     }
-    func getCurrentDay()->Int?{
-        let date = Date()
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .weekday], from: date)
-        let day = components.weekday
-        
-        return day
-        // code from http://stackoverflow.com/questions/28861091/getting-the-current-day-of-the-week-in-swift .This function gets the current day of the week and returns it as Optional() with the corresponding number for the day of the week it is. For example Optional(2) is Monday and Optional(1) is Sunday.
-    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

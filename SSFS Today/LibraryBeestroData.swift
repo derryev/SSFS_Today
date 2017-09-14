@@ -13,9 +13,9 @@ class LibraryBeestroData {
     var dataFile =  String()
     var dataArray = [String]()
     
-    init(stringURL: String) {
+    init() {
         
-        dataFile = readStringFromURL(rawFile: stringURL)
+        dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/library_beestro.csv")
         dataArray = cleanRows(stringData: dataFile)
     
     }

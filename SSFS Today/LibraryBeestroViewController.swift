@@ -17,14 +17,14 @@ class LibraryBeestroViewController: UIViewController {
     @IBOutlet weak var beestroBackground: UIView!
     
     var yarnallData = [String]()
-    var weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    let today = DateFunctions()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dayOfWeek()
-        let currentDate = getDateAsString()
+        dateLabel.text = today.today()
+        let currentDate = today.getDateAsString() // returns date as 9/13/2017
 
-        let beestroLibraryHours = LibraryBeestroData(stringURL: "https://grover.ssfs.org/menus/library_beestro.csv")
+        let beestroLibraryHours = LibraryBeestroData()
         
         yarnallData = beestroLibraryHours.returnDateInformation(date: currentDate)
         
@@ -54,34 +54,6 @@ class LibraryBeestroViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func dayOfWeek() {
-        let dayOfWeek = getCurrentDate()
-        dateLabel.text = weekdays[dayOfWeek! - 2]
-        // pasted into here to get day of the week at the top of the screen (See MenuViewController)
-    }
-    
-    func getCurrentDate()->Int?{
-        let date = Date()
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .weekday], from: date)
-        let day = components.weekday
-        // pasted into here to get day of the week at the top of the screen (See MenuViewController)
-        
-        return day
-        // code from http://stackoverflow.com/questions/28861091/getting-the-current-day-of-the-week-in-swift . This code gets the day of the current date as an integer (Unlike code in menu view controller, this returns the date instead of the day of week).
-    }
-    
-    func getDateAsString() -> String {
-        let date = Date()
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day], from: date)
-        
-        let year =  components.year
-        let month = components.month
-        let day = components.day
-        
-        return String(month!) + "/" + String(day!) + "/" + String(year!)
-    }
     
     func setViewLabelData() {
         libraryHours.text = yarnallData[1]
