@@ -56,6 +56,8 @@ class MenuViewController: UIViewController {
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             
             lunchMenuBackground.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+            lunchMenuBackground.layer.cornerRadius = 10.0
+            lunchMenuBackground.clipsToBounds = true
         } else {
             lunchMenuBackground.backgroundColor = UIColor.white
         }

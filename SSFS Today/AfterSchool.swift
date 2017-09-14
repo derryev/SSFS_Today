@@ -15,7 +15,7 @@ class AfterS {
     
     
     init(){
-        if let url = URL(string: "http://www.ssfs.org/athletics/athletics-today") {
+        if let url = URL(string: "https://www.ssfs.org/athletics/athletics-today") {
             do {
                 self.activity = try String(contentsOf: url)
             } catch {

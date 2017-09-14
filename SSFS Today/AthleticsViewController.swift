@@ -39,6 +39,9 @@ class AthleticsViewController: UIViewController {
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             
             athleticsBackground.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+            
+            athleticsBackground.layer.cornerRadius = 10.0
+            athleticsBackground.clipsToBounds = true
         } else {
             athleticsBackground.backgroundColor = UIColor.white
         }

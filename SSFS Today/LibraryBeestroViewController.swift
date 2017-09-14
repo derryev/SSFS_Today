@@ -37,6 +37,9 @@ class LibraryBeestroViewController: UIViewController {
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             
             beestroBackground.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+            
+            beestroBackground.layer.cornerRadius = 10.0
+            beestroBackground.clipsToBounds = true
         } else {
             beestroBackground.backgroundColor = UIColor.white
         }
