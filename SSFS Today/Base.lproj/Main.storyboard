@@ -67,7 +67,7 @@
                             <constraint firstItem="vrV-t1-Ej7" firstAttribute="centerX" secondItem="n90-2m-QAb" secondAttribute="centerX" id="zuM-pd-cGV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Athletics" id="2La-9p-aTM"/>
+                    <tabBarItem key="tabBarItem" title="Athletics" image="Sports" id="2La-9p-aTM"/>
                     <connections>
                         <outlet property="athleticsBackground" destination="vrV-t1-Ej7" id="fO1-S6-N0H"/>
                         <outlet property="dateLabel" destination="c4Y-EX-5aN" id="2Y4-qa-YVJ"/>
@@ -220,7 +220,7 @@
                             <constraint firstItem="L69-cT-qKe" firstAttribute="top" secondItem="WXg-dK-xyh" secondAttribute="bottom" id="zgf-gD-KCt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Lunch" id="3j7-ay-E6e"/>
+                    <tabBarItem key="tabBarItem" title="Lunch" image="Lunch" id="3j7-ay-E6e"/>
                     <connections>
                         <outlet property="dateLabel" destination="sCH-7R-SgB" id="XO6-KH-hBK"/>
                         <outlet property="downtownDeliText" destination="KyZ-gG-5kN" id="vzs-XK-Qlj"/>
@@ -371,7 +371,7 @@
                             <constraint firstItem="K9w-Y2-uzJ" firstAttribute="centerX" secondItem="ZwO-j4-9Zu" secondAttribute="centerX" id="wzR-NY-OfM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Library/Beestro" id="QHn-s5-vcP"/>
+                    <tabBarItem key="tabBarItem" title="Library/Beestro" image="Image" id="QHn-s5-vcP"/>
                     <connections>
                         <outlet property="announcementsLabel" destination="zoN-do-ahj" id="oK1-kc-dnR"/>
                         <outlet property="beestroBackground" destination="k5z-jd-kro" id="Ugq-Hp-0OZ"/>
@@ -386,6 +386,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image" width="28" height="28"/>
+        <image name="Lunch" width="28" height="28"/>
         <image name="MeetingHouse.JPG" width="2048" height="1536"/>
+        <image name="Sports" width="28" height="28"/>
     </resources>
 </document>
