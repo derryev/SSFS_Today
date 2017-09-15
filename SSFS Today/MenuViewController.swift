@@ -72,7 +72,7 @@ class MenuViewController: UIViewController {
         dateLabel.text = today.today()
         lunchEntreeText.text = day.lunchEntree
         vegetarianEntreeText.text = day.vegetarianEntree
-        sidesText.text = day.sides
+        sidesText.text = day.sides.replacingOccurrences(of: ",", with: "\n")
         downtownDeliText.text = day.downtownDeli
     }
     

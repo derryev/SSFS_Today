@@ -55,5 +55,11 @@ func processRegEx(regExText: String, searchText:String) -> String {
         
     } catch {
     }
-    return returnGames
+    
+    if (returnGames == "") {
+        return "No Games Scheduled for Today"
+    } else {
+        return returnGames
+    }
+    
 }

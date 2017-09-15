@@ -161,11 +161,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Hv-y0-a3y">
-                                <rect key="frame" x="62" y="396" width="250" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Hv-y0-a3y">
+                                <rect key="frame" x="62" y="396" width="250" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="cXf-Y7-b8i"/>
-                                    <constraint firstAttribute="height" constant="22" id="cbb-Ki-lIp"/>
+                                    <constraint firstAttribute="height" constant="66" id="cbb-Ki-lIp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -195,7 +195,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="meT-Yh-RSp" firstAttribute="top" secondItem="Svb-jp-mFe" secondAttribute="bottom" id="2Tq-Gg-zKJ"/>
-                            <constraint firstItem="EQl-0f-ms5" firstAttribute="top" secondItem="5Hv-y0-a3y" secondAttribute="bottom" constant="60" id="2UA-gw-1MF"/>
+                            <constraint firstItem="EQl-0f-ms5" firstAttribute="top" secondItem="5Hv-y0-a3y" secondAttribute="bottom" constant="16" id="2UA-gw-1MF"/>
                             <constraint firstItem="5Hv-y0-a3y" firstAttribute="top" secondItem="bKx-KV-vqi" secondAttribute="bottom" id="3xf-S8-Pd8"/>
                             <constraint firstItem="WXg-dK-xyh" firstAttribute="centerX" secondItem="A9E-yj-hvp" secondAttribute="centerX" id="4Ko-Hj-Sho"/>
                             <constraint firstItem="zNV-hn-AiM" firstAttribute="centerX" secondItem="A9E-yj-hvp" secondAttribute="centerX" id="6V5-VJ-S3S"/>
