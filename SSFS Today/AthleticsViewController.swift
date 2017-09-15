@@ -52,14 +52,17 @@ class AthleticsViewController: UIViewController {
     
     func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .left) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "LibraryViewController")
-            self.present(vc, animated: false, completion: nil)
+            
+            tabBarController?.selectedIndex = 2
+            //let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //let vc = storyboard.instantiateViewController(withIdentifier: "libraryBeestro")
+            //self.present(vc, animated: false, completion: nil)
         }
-        else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MenuViewController")
-            self.present(vc, animated: false, completion: nil)
+        else  if (sender.direction == .right) {
+            tabBarController?.selectedIndex = 0
+            //let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //let vc = storyboard.instantiateViewController(withIdentifier: "lunch")
+            //self.present(vc, animated: false, completion: nil)
         }
     }
   

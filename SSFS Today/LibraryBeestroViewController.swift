@@ -44,6 +44,13 @@ class LibraryBeestroViewController: UIViewController {
             beestroBackground.backgroundColor = UIColor.white
         }
         
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(sender:)))
+        leftSwipe.direction = .left
+        view.addGestureRecognizer(leftSwipe)
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(sender:)))
+        rightSwipe.direction = .right
+        view.addGestureRecognizer(rightSwipe)
+        
         setViewLabelData()
 
         // Do any additional setup after loading the view.
@@ -60,6 +67,22 @@ class LibraryBeestroViewController: UIViewController {
         beestroHoursLabel.text = yarnallData[2]
         announcementsLabel.text = yarnallData[3]
         
+    }
+    
+    func handleSwipes(sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .left) {
+            
+            tabBarController?.selectedIndex = 0
+            //let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //let vc = storyboard.instantiateViewController(withIdentifier: "libraryBeestro")
+            //self.present(vc, animated: false, completion: nil)
+        }
+        else  if (sender.direction == .right) {
+            tabBarController?.selectedIndex = 1
+            //let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            //let vc = storyboard.instantiateViewController(withIdentifier: "lunch")
+            //self.present(vc, animated: false, completion: nil)
+        }
     }
     
 

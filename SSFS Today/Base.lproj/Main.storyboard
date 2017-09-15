@@ -12,7 +12,7 @@
         <!--Athletics-->
         <scene sceneID="Rha-G9-ZRG">
             <objects>
-                <viewController id="h1Y-fe-Jod" customClass="AthleticsViewController" customModule="SSFS_Today" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="athletics" id="h1Y-fe-Jod" customClass="AthleticsViewController" customModule="SSFS_Today" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="myC-Ru-n9i"/>
                         <viewControllerLayoutGuide type="bottom" id="KFD-B9-9Bj"/>
@@ -81,7 +81,7 @@
         <!--Lunch-->
         <scene sceneID="jWO-kN-bkZ">
             <objects>
-                <viewController id="UwK-sC-4IL" customClass="MenuViewController" customModule="SSFS_Today" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="lunch" id="UwK-sC-4IL" customClass="MenuViewController" customModule="SSFS_Today" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mnp-ZB-6hU"/>
                         <viewControllerLayoutGuide type="bottom" id="meT-Yh-RSp"/>
@@ -220,6 +220,7 @@
                             <constraint firstItem="L69-cT-qKe" firstAttribute="top" secondItem="WXg-dK-xyh" secondAttribute="bottom" id="zgf-gD-KCt"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Lunch" image="Lunch" id="3j7-ay-E6e"/>
                     <connections>
                         <outlet property="dateLabel" destination="sCH-7R-SgB" id="XO6-KH-hBK"/>
@@ -256,7 +257,7 @@
         <!--Library/Beestro-->
         <scene sceneID="4F7-b4-q0S">
             <objects>
-                <viewController id="A7l-5J-hbG" customClass="LibraryBeestroViewController" customModule="SSFS_Today" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="libraryBeestro" id="A7l-5J-hbG" customClass="LibraryBeestroViewController" customModule="SSFS_Today" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mqB-ZL-5uW"/>
                         <viewControllerLayoutGuide type="bottom" id="Wd0-E5-be7"/>
