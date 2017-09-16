@@ -11,7 +11,7 @@ import Foundation
 class DateFunctions {
     
     let date = Date()
-    let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     
     func getCurrentDay()->Int?{
         
@@ -27,7 +27,8 @@ class DateFunctions {
         let dayOfWeek = getCurrentDay()
         
         // dayOfWeek starts at 2 (becuase Monday is returned as Optional(2) in the getCurrentDay function. So to make it correspond with the weekdays variable, there is a "- 2" so that the weekdays align.
-        return weekdays[dayOfWeek! - 2]
+
+        return weekdays[dayOfWeek! - 1]
     }
     
     func getCurrentWeekDay()->Int?{
