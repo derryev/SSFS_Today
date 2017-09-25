@@ -46,7 +46,7 @@ func processRegEx(regExText: String, searchText:String) -> String {
         let regex = try NSRegularExpression(pattern: regExText, options: NSRegularExpression.Options.dotMatchesLineSeparators)
         let matches = regex.matches(in: searchText as String, options: [], range: NSMakeRange(0, searchText.characters.count))
         for match in matches{
-            name = (searchText as NSString).substring(with: match.rangeAt(1))
+            name = (searchText as NSString).substring(with: match.range(at: 1))
             returnGames += "\n" + name + "\n"
             
         }

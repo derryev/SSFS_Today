@@ -77,7 +77,7 @@ class MenuViewController: UIViewController {
     }
     
     
-    func handleSwipes(sender:UISwipeGestureRecognizer) {
+    @objc func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .left) {
             
             tabBarController?.selectedIndex = 1

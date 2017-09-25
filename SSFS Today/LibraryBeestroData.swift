@@ -37,7 +37,7 @@ class LibraryBeestroData {
     
     func cleanRows(stringData:String)->[String]{
         var cleanFile = stringData
-        cleanFile = cleanFile.replacingOccurrences(of: "r", with: "\n")
+        cleanFile = cleanFile.replacingOccurrences(of: "\r", with: "\n")
         cleanFile = cleanFile.replacingOccurrences(of: "\n\n", with: "\n")
         return cleanFile.components(separatedBy: "\n")
 

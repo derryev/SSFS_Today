@@ -69,13 +69,15 @@ class Menu {
     func convertMenuToString() {
         for item in differentMenu {
             let newString = String(item)
-            aMenu = aMenu + newString!
+            aMenu = aMenu + newString
         }
     }
     
     func rangeFromNSRange(nsRange: NSRange, forString str: String) -> Range<String.Index>? {
-        let fromUTF16 = str.utf16.startIndex.advanced(by: nsRange.location)
-        let toUTF16 = fromUTF16.advanced(by: nsRange.length)
+        let fromUTF16 = str.index(str.startIndex, offsetBy: nsRange.location)
+        //let fromUTF16 = str.utf16.startIndex.advanced(by: nsRange.location)
+        let toUTF16 = str.index(fromUTF16, offsetBy: nsRange.length)
+        //let toUTF16 = fromUTF16.advanced(by: nsRange.length)
         if let from = String.Index(fromUTF16, within: str),
             let to = String.Index(toUTF16, within: str) {
             return from ..< to
@@ -89,7 +91,7 @@ class Menu {
             let regex = try NSRegularExpression(pattern: regExText, options: NSRegularExpression.Options.caseInsensitive)
             let matches = regex.matches(in: stringToParse as String, options: [], range: NSMakeRange(0, stringToParse.characters.count))
             if let match = matches.first {
-                let range = match.rangeAt(1)
+                let range = match.range(at: 1)
                 if let swiftRange = rangeFromNSRange(nsRange: range, forString: stringToParse as String) {
                     name = stringToParse.substring(with: swiftRange)
                 }
@@ -106,7 +108,7 @@ class Menu {
             let regex = try NSRegularExpression(pattern: regExText, options: NSRegularExpression.Options.caseInsensitive)
             let matches = regex.matches(in: stringToParse as String, options: [], range: NSMakeRange(0, stringToParse.characters.count))
             if let match = matches.first {
-                let range = match.rangeAt(1)
+                let range = match.range(at: 1)
                 if let swiftRange = rangeFromNSRange(nsRange: range, forString: stringToParse as String) {
                     name = stringToParse.substring(with: swiftRange)
                 }

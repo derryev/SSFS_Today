@@ -16,6 +16,7 @@ class DailyMenu {
     var dayMeal: String
     var fridayMeal: String
     var regExText = String()
+    var dayOfWeek: Int
     
     var menu = Menu()
     let today = DateFunctions()
@@ -24,8 +25,8 @@ class DailyMenu {
         
         var isFriday = false
         var isWeekend = false
-        let dayOfWeek = today.getCurrentDay()
-        if dayOfWeek! == 2 {
+        dayOfWeek = today.getCurrentDay()!
+        if dayOfWeek == 2 {
             regExText = "MONDAY(.*?)TUESDAY"
         } else if dayOfWeek == 3 {
             regExText = "TUESDAY(.*?)WEDNESDAY"
@@ -51,9 +52,16 @@ class DailyMenu {
         }
         
         if (!isWeekend) {
-            lunchEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "LUNCH ENTRÉE(.*?)VEGETARIAN"))
-            vegetarianEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "VEGETARIAN ENTRÉE(.*?)SIDES"))
-            sides = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "SIDES(.*?)DOWNTOWN"))
+            if dayOfWeek == 2 {
+                lunchEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "VEGETARIAN ENTRÉE(.*?)VEGETARIAN"))
+                let tempVegetarianEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "VEGETARIAN ENTRÉE(.*?)SIDES"))
+                vegetarianEntree = String(menu.getMenuItem(stringToParse: tempVegetarianEntree, regExText: "VEGETARIAN ENTRÉE(.*)"))
+                sides = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "SIDES(.*?)DINNER"))
+            } else {
+                lunchEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "LUNCH ENTRÉE(.*?)VEGETARIAN"))
+                vegetarianEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "VEGETARIAN ENTRÉE(.*?)SIDES"))
+                sides = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "SIDES(.*?)DOWNTOWN"))
+            }
             downtownDeli = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "DOWNTOWN DELI(.*?)DINNER"))
         } else {
             lunchEntree = "No School Today"
