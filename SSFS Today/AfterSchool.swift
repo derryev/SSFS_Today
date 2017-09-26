@@ -40,7 +40,9 @@ func processRegEx(regExText: String, searchText:String) -> String {
     var name: String = ""
     var returnGames: String = ""
     if let range = searchText.range(of:regExText) {
-        name = searchText.substring(with:range)
+        //name = searchText.substring(with:range)
+        name = String(searchText[range])
+        
     }
     do {
         let regex = try NSRegularExpression(pattern: regExText, options: NSRegularExpression.Options.dotMatchesLineSeparators)

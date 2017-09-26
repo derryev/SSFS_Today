@@ -93,7 +93,7 @@ class Menu {
             if let match = matches.first {
                 let range = match.range(at: 1)
                 if let swiftRange = rangeFromNSRange(nsRange: range, forString: stringToParse as String) {
-                    name = stringToParse.substring(with: swiftRange)
+                    name = String(stringToParse[swiftRange])
                 }
             }
         } catch {
@@ -110,7 +110,7 @@ class Menu {
             if let match = matches.first {
                 let range = match.range(at: 1)
                 if let swiftRange = rangeFromNSRange(nsRange: range, forString: stringToParse as String) {
-                    name = stringToParse.substring(with: swiftRange)
+                    name = String(stringToParse[swiftRange])
                 }
             }
         } catch {
