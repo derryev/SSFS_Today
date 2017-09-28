@@ -90,6 +90,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D38E16A21F7D3030007BD6DA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D39DB5421F680EFF0074E952 /* MenuViewController.swift */,
+				D39DB5521F68963E0074E952 /* LibraryBeestroViewController.swift */,
+				D39DB54C1F6872C30074E952 /* AthleticsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D38E16A31F7D3049007BD6DA /* Model Files */ = {
+			isa = PBXGroup;
+			children = (
+				D39DB5461F680FC10074E952 /* DailyMenu.swift */,
+				D39DB5441F680F550074E952 /* Menu.swift */,
+				D39DB5501F6896230074E952 /* LibraryBeestroData.swift */,
+				D32805E11F6AC04100598CC3 /* DateFunctions.swift */,
+				D39DB54E1F6873230074E952 /* AfterSchool.swift */,
+			);
+			path = "Model Files";
+			sourceTree = "<group>";
+		};
 		D39DB5081F680CFE0074E952 = {
 			isa = PBXGroup;
 			children = (
@@ -114,16 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				D39DB54A1F6851CF0074E952 /* MeetingHouse.JPG */,
-				D39DB5421F680EFF0074E952 /* MenuViewController.swift */,
-				D39DB5461F680FC10074E952 /* DailyMenu.swift */,
-				D39DB5441F680F550074E952 /* Menu.swift */,
+				D38E16A21F7D3030007BD6DA /* View Controllers */,
+				D38E16A31F7D3049007BD6DA /* Model Files */,
 				D39DB5141F680CFE0074E952 /* AppDelegate.swift */,
 				D39DB5181F680CFE0074E952 /* Main.storyboard */,
-				D39DB5501F6896230074E952 /* LibraryBeestroData.swift */,
-				D39DB5521F68963E0074E952 /* LibraryBeestroViewController.swift */,
-				D39DB54C1F6872C30074E952 /* AthleticsViewController.swift */,
-				D32805E11F6AC04100598CC3 /* DateFunctions.swift */,
-				D39DB54E1F6873230074E952 /* AfterSchool.swift */,
 				D39DB51B1F680CFE0074E952 /* Assets.xcassets */,
 				D39DB51D1F680CFE0074E952 /* LaunchScreen.storyboard */,
 				D39DB5201F680CFE0074E952 /* Info.plist */,

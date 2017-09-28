@@ -20,10 +20,6 @@ class AthleticsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let activities = afterSchool.getGames(dayOfWeek: today.getCurrentWeekDay()!)
-        gamesTodayText.text = activities
-        dateLabel.text = today.today()
-        
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(sender:)))
         leftSwipe.direction = .left
         view.addGestureRecognizer(leftSwipe)
@@ -48,27 +44,30 @@ class AthleticsViewController: UIViewController {
         } else {
             athleticsBackground.backgroundColor = UIColor.white
         }
+        
+        setAthleticEvents()
+        let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
+        appDelegate.athleticsViewController = self
     }
     
     @objc func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .left) {
-            
             tabBarController?.selectedIndex = 2
-            //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            //let vc = storyboard.instantiateViewController(withIdentifier: "libraryBeestro")
-            //self.present(vc, animated: false, completion: nil)
         }
         else  if (sender.direction == .right) {
             tabBarController?.selectedIndex = 0
-            //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            //let vc = storyboard.instantiateViewController(withIdentifier: "lunch")
-            //self.present(vc, animated: false, completion: nil)
         }
     }
   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setAthleticEvents() {
+        let activities = afterSchool.getGames(dayOfWeek: today.getCurrentWeekDay()!)
+        gamesTodayText.text = activities
+        dateLabel.text = today.today()
     }
     
     

@@ -12,6 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var lunchViewController: MenuViewController?
+    var athleticsViewController: AthleticsViewController?
+    var beestroViewController: LibraryBeestroViewController?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -31,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        lunchViewController?.setMenuLabels()
+        athleticsViewController?.setAthleticEvents()
+        beestroViewController?.setViewLabelData()
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

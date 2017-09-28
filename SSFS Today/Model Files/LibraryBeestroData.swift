@@ -8,16 +8,15 @@
 
 import Foundation
 
-class LibraryBeestroData {
+struct LibraryBeestroData {
     
-    var dataFile =  String()
+    var dataFile = String()
     var dataArray = [String]()
     
-    init() {
-        
+    mutating func fetchDataFromServer(for date: String) -> [String] {
         dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/library_beestro.csv")
         dataArray = cleanRows(stringData: dataFile)
-    
+        return returnDateInformation(date: date)
     }
     
 
