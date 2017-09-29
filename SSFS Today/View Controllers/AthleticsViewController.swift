@@ -15,7 +15,7 @@ class AthleticsViewController: UIViewController {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var gamesTodayText: UILabel!
-    @IBOutlet weak var athleticsBackground: UIView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,22 +28,6 @@ class AthleticsViewController: UIViewController {
         view.addGestureRecognizer(rightSwipe)
         
         // Do any additional setup after loading the view. The "let activities" sends the date to the getGames function in my after school file, and then runs it in this file.
-        
-        if !UIAccessibilityIsReduceTransparencyEnabled() {
-            athleticsBackground.backgroundColor = UIColor.clear
-            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
-            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            //always fill the view
-            blurEffectView.frame = athleticsBackground.bounds
-            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            
-            athleticsBackground.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
-            
-            athleticsBackground.layer.cornerRadius = 10.0
-            athleticsBackground.clipsToBounds = true
-        } else {
-            athleticsBackground.backgroundColor = UIColor.white
-        }
         
         setAthleticEvents()
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate

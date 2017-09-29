@@ -14,32 +14,13 @@ class LibraryBeestroViewController: UIViewController {
     @IBOutlet weak var libraryHours: UILabel!
     @IBOutlet weak var beestroHoursLabel: UILabel!
     @IBOutlet weak var announcementsLabel: UILabel!
-    @IBOutlet weak var beestroBackground: UIView!
+    @IBOutlet weak var libAnnouncements: UILabel!
     
     var yarnallData = [String]()
     let today = DateFunctions()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateLabel.text = today.today()
-        
-        
-        if !UIAccessibilityIsReduceTransparencyEnabled() {
-            beestroBackground.backgroundColor = UIColor.clear
-            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
-            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            //always fill the view
-            blurEffectView.frame = beestroBackground.bounds
-            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            
-            beestroBackground.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
-            
-            beestroBackground.layer.cornerRadius = 10.0
-            beestroBackground.clipsToBounds = true
-        } else {
-            beestroBackground.backgroundColor = UIColor.white
-        }
-        
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(sender:)))
         leftSwipe.direction = .left
         view.addGestureRecognizer(leftSwipe)
@@ -62,9 +43,11 @@ class LibraryBeestroViewController: UIViewController {
     func setViewLabelData() {
         var beestroLibraryHours = LibraryBeestroData()
         yarnallData = beestroLibraryHours.fetchDataFromServer(for: today.getDateAsString())
+        dateLabel.text = today.today()
         libraryHours.text = yarnallData[1]
-        beestroHoursLabel.text = yarnallData[2]
-        announcementsLabel.text = yarnallData[3]
+        libAnnouncements.text = yarnallData[2]
+        beestroHoursLabel.text = yarnallData[3]
+        announcementsLabel.text = yarnallData[4]
         
     }
     

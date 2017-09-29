@@ -14,29 +14,12 @@ class MenuViewController: UIViewController {
     let today = DateFunctions()
     
     @IBOutlet weak var dateLabel: UILabel!
-    
-    
-    
     @IBOutlet weak var lunchEntreeText: UILabel!
-    
-    
-    
-    @IBOutlet weak var vegetarianEntreeLabel: UILabel!
-    
     @IBOutlet weak var vegetarianEntreeText: UILabel!
-    
-    
-    
-    
-    @IBOutlet weak var sidesLabel: UILabel!
     @IBOutlet weak var sidesText: UILabel!
-    
-    
-    @IBOutlet weak var downtownDeliLabel: UILabel!
     @IBOutlet weak var downtownDeliText: UILabel!
-    
     @IBOutlet weak var backgroundImage: UIImageView!
-    @IBOutlet weak var lunchMenuBackground: UIView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,22 +31,7 @@ class MenuViewController: UIViewController {
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(sender:)))
         rightSwipe.direction = .right
         view.addGestureRecognizer(rightSwipe)
-        
-        if !UIAccessibilityIsReduceTransparencyEnabled() {
-            lunchMenuBackground.backgroundColor = UIColor.clear
-            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
-            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            //always fill the view
-            blurEffectView.frame = lunchMenuBackground.bounds
-            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            
-            lunchMenuBackground.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
-            lunchMenuBackground.layer.cornerRadius = 10.0
-            lunchMenuBackground.clipsToBounds = true
-        } else {
-            lunchMenuBackground.backgroundColor = UIColor.white
-        }
-        
+    
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
         appDelegate.lunchViewController = self
         
