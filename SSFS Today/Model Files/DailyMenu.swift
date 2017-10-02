@@ -53,21 +53,21 @@ class DailyMenu {
         
         if (!isWeekend) {
             if dayOfWeek == 2 {
-                lunchEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "VEGETARIAN ENTRÉE(.*?)VEGETARIAN"))
-                let tempVegetarianEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "VEGETARIAN ENTRÉE(.*?)SIDES"))
-                vegetarianEntree = String(menu.getMenuItem(stringToParse: tempVegetarianEntree, regExText: "VEGETARIAN ENTRÉE(.*)"))
-                sides = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "SIDES(.*?)DINNER"))
+                lunchEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "VEGETARIAN ENTR[ÉE]E(.*?)VEGETARIAN"))
+                let tempVegetarianEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "VEGETARIAN ENTR[ÉE]E(.*?)SIDES"))
+                vegetarianEntree = String(menu.getMenuItem(stringToParse: tempVegetarianEntree, regExText: "VEGETARIAN ENTR[ÉE]E(.*)"))
+                sides = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "SIDES(.*?)(DOWNTOWN|DINNER)"))
             } else {
-                lunchEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "LUNCH ENTRÉE(.*?)VEGETARIAN"))
-                vegetarianEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "VEGETARIAN ENTRÉE(.*?)SIDES"))
+                lunchEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "LUNCH ENTR[ÉE]E(.*?)VEGETARIAN"))
+                vegetarianEntree = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "VEGETARIAN ENTR[ÉE]E(.*?)SIDES"))
                 sides = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "SIDES(.*?)DOWNTOWN"))
             }
             downtownDeli = String(menu.getMenuItem(stringToParse: dayMeal, regExText: "DOWNTOWN DELI(.*?)DINNER"))
         } else {
-            lunchEntree = "No School Today"
-            vegetarianEntree = "No School Today"
-            sides = "No School Today"
-            downtownDeli = "No School Today"
+            lunchEntree = "No Lunch Information"
+            vegetarianEntree = "No Vegetarian Today"
+            sides = "No Side Today"
+            downtownDeli = "No Deli Today"
         }
         
         
