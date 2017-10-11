@@ -8,60 +8,54 @@
 
 import Foundation
 
-class AfterS {
+struct Athletics {
     
-    var activity = String()
-    var time = String()
+    var dataFile = String()
+    var dataArray = [String]()
+    
+    mutating func fetchDataFromServer(for date: String) -> String {
+        dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/athletics_schedule.csv")
+        dataArray = cleanRows(stringData: dataFile)
+        return getGames(date: date)
+    }
     
     
-    init(){
-        if let url = URL(string: "https://www.ssfs.org/athletics/athletics-today") {
+    func readStringFromURL(rawFile:String)-> String!{
+        if let url = NSURL(string: rawFile) {
             do {
-                self.activity = try String(contentsOf: url)
+                return try String(contentsOf: url as URL)
             } catch {
-                print("There was an error.")
-                // This gives activity the web contents of the url's webpage.
+                print("Cannot load contents")
+                return nil
             }
-            
+        } else {
+            print("String was not a URL")
+            return nil
         }
     }
     
-    func getGames(dayOfWeek: Int) -> String {
-        let regExText =  "\"fsDay\">\(dayOfWeek)<(.*?)a>"
-        let name = processRegEx(regExText: regExText, searchText: activity)
-        let regExTextTwo = "href=\"#\">(.*?)</"
-        let game = processRegEx(regExText: regExTextTwo, searchText: name)
-        return game
-        // This function contains the search string.
-    }
-}
-
-func processRegEx(regExText: String, searchText:String) -> String {
-    var name: String = ""
-    var returnGames: String = ""
-    if let range = searchText.range(of:regExText) {
-        //name = searchText.substring(with:range)
-        name = String(searchText[range])
+    func cleanRows(stringData:String)->[String]{
+        var cleanFile = stringData
+        cleanFile = cleanFile.replacingOccurrences(of: "\r", with: "\n")
+        cleanFile = cleanFile.replacingOccurrences(of: "\n\n", with: "\n")
+        return cleanFile.components(separatedBy: "\n")
         
-    }
-    do {
-        let regex = try NSRegularExpression(pattern: regExText, options: NSRegularExpression.Options.dotMatchesLineSeparators)
-        let matches = regex.matches(in: searchText as String, options: [], range: NSMakeRange(0, searchText.characters.count))
-        for match in matches{
-            name = (searchText as NSString).substring(with: match.range(at: 1))
-            returnGames += "\n" + name + "\n"
-            
-        }
-        
-        // These lines of code isolate the data that I intend to pull from the url. The function, getGames, uses a regular expression, regExText, and takes a small portion of info from the page source by identifying where the date of each event is. It calls the dayOfWeek variable to find all portions of information that correspond with the current date. It then sets that equal to name. The next regular expression, regExTwo, takes that portion of information from name and then pulls the title of the event from it. I am now trying to get the processRegEx function to do it for each event, I am currently unsuccessful.
-        
-    } catch {
     }
     
-    if (returnGames == "") {
-        return "No Games Scheduled for Today"
-    } else {
-        return returnGames
+    func getGames(date: String) -> String {
+        var todaysGames = ""
+        for line in dataArray {
+            let currentLineArray = line.components(separatedBy: ",")
+            if (currentLineArray[0] == date) {
+                todaysGames += currentLineArray[1] + ": " + currentLineArray[3] + " vs. " + currentLineArray[5] + " (" + currentLineArray[4] + ")" + "\n\n"
+            }
+        }
+        if todaysGames != "" {
+            return todaysGames
+        } else {
+            return "No games today"
+        }
+        
     }
     
 }

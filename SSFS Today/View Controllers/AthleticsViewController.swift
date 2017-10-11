@@ -10,7 +10,6 @@ import UIKit
 
 class AthleticsViewController: UIViewController {
 
-    let afterSchool = AfterS()
     let today = DateFunctions()
 
     @IBOutlet weak var dateLabel: UILabel!
@@ -49,7 +48,8 @@ class AthleticsViewController: UIViewController {
     }
     
     func setAthleticEvents() {
-        let activities = afterSchool.getGames(dayOfWeek: today.getCurrentWeekDay()!)
+        var schedule = Athletics()
+        let activities = schedule.fetchDataFromServer(for: today.getDateAsString())
         gamesTodayText.text = activities
         dateLabel.text = today.today()
     }
