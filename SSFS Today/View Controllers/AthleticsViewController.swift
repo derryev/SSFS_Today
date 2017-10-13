@@ -13,8 +13,8 @@ class AthleticsViewController: UIViewController {
     let today = DateFunctions()
 
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var gamesTodayText: UILabel!
-
+    @IBOutlet weak var gamesTodayText: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
