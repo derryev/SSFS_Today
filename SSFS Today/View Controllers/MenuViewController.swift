@@ -14,12 +14,8 @@ class MenuViewController: UIViewController {
     let today = DateFunctions()
     
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var lunchEntreeText: UILabel!
-    @IBOutlet weak var vegetarianEntreeText: UILabel!
-    @IBOutlet weak var sidesText: UILabel!
-    @IBOutlet weak var downtownDeliText: UILabel!
-    @IBOutlet weak var backgroundImage: UIImageView!
-
+    @IBOutlet weak var lunchMenuText: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +36,23 @@ class MenuViewController: UIViewController {
     func setMenuLabels() {
         let day = DailyMenu()
         dateLabel.text = today.today()
-        lunchEntreeText.text = day.lunchEntree
-        vegetarianEntreeText.text = day.vegetarianEntree
-        sidesText.text = day.sides.replacingOccurrences(of: ",", with: "\n")
-        downtownDeliText.text = day.downtownDeli
+        var starting = 0
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        let lunchMenu = "Lunch Entree\n" + day.lunchEntree + "\n\nVegetarian Entree\n" + day.vegetarianEntree + "\n\nSides\n" + day.sides.replacingOccurrences(of: ",", with: "\n") + "\n\nDowntown Deli\n" +
+            day.downtownDeli
+        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: lunchMenu)
+        attributedText.addAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17)], range: NSRange(location:starting, length: lunchMenu.count))
+        attributedText.addAttributes([NSAttributedStringKey.paragraphStyle: paragraphStyle], range: NSRange(location:starting, length: lunchMenu.count))
+        attributedText.addAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)], range: NSRange(location: starting, length: 12))
+        starting += 13 + day.lunchEntree.count
+        attributedText.addAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)], range: NSRange(location: starting, length: 20))
+        starting += 21 + day.vegetarianEntree.count
+        attributedText.addAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)], range: NSRange(location: starting, length: 7))
+        starting += 8 + day.sides.count
+        attributedText.addAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)], range: NSRange(location: starting, length: 14))
+        lunchMenuText.attributedText = attributedText
+        
     }
     
     
