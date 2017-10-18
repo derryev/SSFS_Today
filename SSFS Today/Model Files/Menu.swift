@@ -18,6 +18,7 @@ struct Menu {
     
     init() {
         if retrieveMenuFromWebsite() != nil {
+            aMenu = ""
             stripOutXMLfromMenu()
             createTextOnlyMenu()
             convertMenuToString()
