@@ -49,9 +49,13 @@ class AthleticsViewController: UIViewController {
     
     func setAthleticEvents() {
         var schedule = Athletics()
-        let activities = schedule.fetchDataFromServer(for: today.getDateAsString())
-        gamesTodayText.text = activities
         dateLabel.text = today.today()
+        if let activities = schedule.fetchDataFromServer(for: today.getDateAsString()) {
+            gamesTodayText.text = activities
+        } else {
+            gamesTodayText.text = "No Data Found"
+        }
+        
     }
     
     

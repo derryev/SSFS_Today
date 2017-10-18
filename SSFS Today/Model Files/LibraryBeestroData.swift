@@ -14,13 +14,16 @@ struct LibraryBeestroData {
     var dataArray = [String]()
     
     mutating func fetchDataFromServer(for date: String) -> [String] {
-        dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/library_beestro.csv")
-        dataArray = cleanRows(stringData: dataFile)
-        return returnDateInformation(date: date)
+        if let dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/library_beestro.csv") {
+            dataArray = cleanRows(stringData: dataFile)
+            return returnDateInformation(date: date)
+        } else {
+            return ["No Data Found", "No Data Found", "No Data Found", "No Data Found", "No Data Found"]
+        }
     }
     
 
-    func readStringFromURL(rawFile:String)-> String!{
+    func readStringFromURL(rawFile:String)-> String? {
         if let url = NSURL(string: rawFile) {
             do {
                 return try String(contentsOf: url as URL)

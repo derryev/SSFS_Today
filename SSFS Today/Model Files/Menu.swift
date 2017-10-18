@@ -8,35 +8,39 @@
 
 import Foundation
 
-class Menu {
-    var menuContents = String()
-    
+struct Menu {
     var shorterMenu = [String]()
     var otherMenu = [String]()
     var differentMenu = [String]()
     var spacesMenu = [String]()
-    var aMenu = String()
+    var aMenu: String?
+    var menuContents: String?
     
     init() {
-        retrieveMenuFromWebsite()
-        stripOutXMLfromMenu()
-        createTextOnlyMenu()
-        convertMenuToString()
+        if retrieveMenuFromWebsite() != nil {
+            stripOutXMLfromMenu()
+            createTextOnlyMenu()
+            convertMenuToString()
+        } else {
+            aMenu = nil
+        }
+        
     }
     
-    func retrieveMenuFromWebsite() {
+    mutating func retrieveMenuFromWebsite() -> String? {
         if let url = NSURL(string: "https://grover.ssfs.org/menus/word/document.xml") {
             
             do {
-                self.menuContents = try String(contentsOf: url as URL)
+                menuContents =  try String(contentsOf: url as URL)
             } catch {
-                print("there was an error.")
+                menuContents = nil
             }
         }
+        return menuContents
     }
     
-    func stripOutXMLfromMenu() {
-        let newMenu = self.menuContents.components(separatedBy: ">")
+    mutating func stripOutXMLfromMenu() {
+        let newMenu = menuContents!.components(separatedBy: ">")
         for item in newMenu {
             if item.contains("</w:t") && !item.contains("</w:tc") && !item.contains("</w:tr") && !item.contains("</w:tbl"){
                 shorterMenu.append(item)
@@ -44,7 +48,7 @@ class Menu {
         }
     }
     
-    func createTextOnlyMenu() {
+    mutating func createTextOnlyMenu() {
         for item in shorterMenu {
             if item.contains("</w:t") {
                 let newString = item.replacingOccurrences(of: "</w:t", with: "")
@@ -66,18 +70,16 @@ class Menu {
         }
     }
     
-    func convertMenuToString() {
+    mutating func convertMenuToString() {
         for item in differentMenu {
             let newString = String(item)
-            aMenu = aMenu + newString
+            aMenu = aMenu! + newString
         }
     }
     
     func rangeFromNSRange(nsRange: NSRange, forString str: String) -> Range<String.Index>? {
         let fromUTF16 = str.index(str.startIndex, offsetBy: nsRange.location)
-        //let fromUTF16 = str.utf16.startIndex.advanced(by: nsRange.location)
         let toUTF16 = str.index(fromUTF16, offsetBy: nsRange.length)
-        //let toUTF16 = fromUTF16.advanced(by: nsRange.length)
         if let from = String.Index(fromUTF16, within: str),
             let to = String.Index(toUTF16, within: str) {
             return from ..< to

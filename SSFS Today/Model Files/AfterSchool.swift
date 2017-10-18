@@ -13,14 +13,17 @@ struct Athletics {
     var dataFile = String()
     var dataArray = [String]()
     
-    mutating func fetchDataFromServer(for date: String) -> String {
-        dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/athletics_schedule.csv")
-        dataArray = cleanRows(stringData: dataFile)
-        return getGames(date: date)
+    mutating func fetchDataFromServer(for date: String) -> String? {
+        if let dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/athletics_schedule.csv") {
+            dataArray = cleanRows(stringData: dataFile)
+            return getGames(date: date)
+        } else {
+            return nil
+        }
     }
     
     
-    func readStringFromURL(rawFile:String)-> String!{
+    func readStringFromURL(rawFile:String)-> String? {
         if let url = NSURL(string: rawFile) {
             do {
                 return try String(contentsOf: url as URL)
