@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D32805E21F6AC04100598CC3 /* DateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32805E11F6AC04100598CC3 /* DateFunctions.swift */; };
+		D34CE6591F9E5A3B00805D5E /* SSFS_Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D34CE6581F9E5A3A00805D5E /* SSFS_Logo.jpg */; };
+		D34CE65B1F9E5BA600805D5E /* WildezineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34CE65A1F9E5BA600805D5E /* WildezineViewController.swift */; };
+		D37DC6171F9A5E1A004075F0 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC6161F9A5E1A004075F0 /* ScheduleTableViewController.swift */; };
+		D37DC6191F9A78AF004075F0 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC6181F9A78AF004075F0 /* Block.swift */; };
 		D39DB5151F680CFE0074E952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB5141F680CFE0074E952 /* AppDelegate.swift */; };
 		D39DB51A1F680CFE0074E952 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39DB5181F680CFE0074E952 /* Main.storyboard */; };
 		D39DB51C1F680CFE0074E952 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D39DB51B1F680CFE0074E952 /* Assets.xcassets */; };
@@ -22,6 +26,7 @@
 		D39DB54F1F6873230074E952 /* AfterSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB54E1F6873230074E952 /* AfterSchool.swift */; };
 		D39DB5511F6896230074E952 /* LibraryBeestroData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB5501F6896230074E952 /* LibraryBeestroData.swift */; };
 		D39DB5531F68963E0074E952 /* LibraryBeestroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB5521F68963E0074E952 /* LibraryBeestroViewController.swift */; };
+		D3C14A431F99119D009DC970 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C14A421F99119D009DC970 /* Schedule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +48,10 @@
 
 /* Begin PBXFileReference section */
 		D32805E11F6AC04100598CC3 /* DateFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFunctions.swift; sourceTree = "<group>"; };
+		D34CE6581F9E5A3A00805D5E /* SSFS_Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SSFS_Logo.jpg; sourceTree = "<group>"; };
+		D34CE65A1F9E5BA600805D5E /* WildezineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildezineViewController.swift; sourceTree = "<group>"; };
+		D37DC6161F9A5E1A004075F0 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		D37DC6181F9A78AF004075F0 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		D39DB5111F680CFE0074E952 /* SSFS Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SSFS Today.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39DB5141F680CFE0074E952 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D39DB5191F680CFE0074E952 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +72,7 @@
 		D39DB54E1F6873230074E952 /* AfterSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterSchool.swift; sourceTree = "<group>"; };
 		D39DB5501F6896230074E952 /* LibraryBeestroData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryBeestroData.swift; sourceTree = "<group>"; };
 		D39DB5521F68963E0074E952 /* LibraryBeestroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryBeestroViewController.swift; sourceTree = "<group>"; };
+		D3C14A421F99119D009DC970 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,8 @@
 		D38E16A21F7D3030007BD6DA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D34CE65A1F9E5BA600805D5E /* WildezineViewController.swift */,
+				D37DC6161F9A5E1A004075F0 /* ScheduleTableViewController.swift */,
 				D39DB5421F680EFF0074E952 /* MenuViewController.swift */,
 				D39DB5521F68963E0074E952 /* LibraryBeestroViewController.swift */,
 				D39DB54C1F6872C30074E952 /* AthleticsViewController.swift */,
@@ -103,6 +115,8 @@
 		D38E16A31F7D3049007BD6DA /* Model Files */ = {
 			isa = PBXGroup;
 			children = (
+				D3C14A421F99119D009DC970 /* Schedule.swift */,
+				D37DC6181F9A78AF004075F0 /* Block.swift */,
 				D39DB5461F680FC10074E952 /* DailyMenu.swift */,
 				D39DB5441F680F550074E952 /* Menu.swift */,
 				D39DB5501F6896230074E952 /* LibraryBeestroData.swift */,
@@ -136,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				D39DB54A1F6851CF0074E952 /* MeetingHouse.JPG */,
+				D34CE6581F9E5A3A00805D5E /* SSFS_Logo.jpg */,
 				D38E16A21F7D3030007BD6DA /* View Controllers */,
 				D38E16A31F7D3049007BD6DA /* Model Files */,
 				D39DB5141F680CFE0074E952 /* AppDelegate.swift */,
@@ -280,6 +295,7 @@
 			files = (
 				D39DB54B1F6851CF0074E952 /* MeetingHouse.JPG in Resources */,
 				D39DB51F1F680CFE0074E952 /* LaunchScreen.storyboard in Resources */,
+				D34CE6591F9E5A3B00805D5E /* SSFS_Logo.jpg in Resources */,
 				D39DB51C1F680CFE0074E952 /* Assets.xcassets in Resources */,
 				D39DB51A1F680CFE0074E952 /* Main.storyboard in Resources */,
 			);
@@ -306,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D37DC6171F9A5E1A004075F0 /* ScheduleTableViewController.swift in Sources */,
 				D39DB54F1F6873230074E952 /* AfterSchool.swift in Sources */,
 				D39DB5531F68963E0074E952 /* LibraryBeestroViewController.swift in Sources */,
 				D39DB54D1F6872C30074E952 /* AthleticsViewController.swift in Sources */,
@@ -314,7 +331,10 @@
 				D39DB5511F6896230074E952 /* LibraryBeestroData.swift in Sources */,
 				D39DB5471F680FC10074E952 /* DailyMenu.swift in Sources */,
 				D32805E21F6AC04100598CC3 /* DateFunctions.swift in Sources */,
+				D37DC6191F9A78AF004075F0 /* Block.swift in Sources */,
+				D3C14A431F99119D009DC970 /* Schedule.swift in Sources */,
 				D39DB5431F680EFF0074E952 /* MenuViewController.swift in Sources */,
+				D34CE65B1F9E5BA600805D5E /* WildezineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
