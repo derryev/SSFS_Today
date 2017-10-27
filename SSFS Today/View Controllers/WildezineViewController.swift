@@ -2,7 +2,7 @@
 //  WildezineViewController.swift
 //  SSFS Today
 //
-//  Created by Brian Wilkinson on 10/23/17.
+//  Created by Brian Wilkinson on 10/27/17.
 //  Copyright © 2017 Brian Wilkinson. All rights reserved.
 //
 
@@ -11,21 +11,55 @@ import WebKit
 
 class WildezineViewController: UIViewController, WKNavigationDelegate {
 
+    @IBOutlet weak var webViewContainer: UIView!
+    var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     var webView: WKWebView!
     
-    override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.navigationDelegate = self
-        view = webView
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        webView = WKWebView(frame: webViewContainer.bounds, configuration: WKWebViewConfiguration())
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        webView.navigationDelegate = self
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = webView.center
+        
+        self.webViewContainer.addSubview(webView)
+        self.webViewContainer.addSubview(activityIndicator)
         
         let myURL = URL(string: "https://wildezine.com/")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
         webView.allowsBackForwardNavigationGestures = true
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        showActivityIndicator(show: true)
+    }
+    
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        showActivityIndicator(show: false)
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        showActivityIndicator(show: false)
+    }
+    
+    func showActivityIndicator(show: Bool) {
+        if show {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+        
     }
     
 

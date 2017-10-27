@@ -51,13 +51,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Wildezine"/>
                                 <connections>
-                                    <segue destination="3t1-xI-y6N" kind="show" id="eR0-hb-5p4"/>
+                                    <segue destination="1rH-yi-6Xe" kind="show" id="WFj-Uu-kIb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SSFS_Logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="axd-aX-nFT">
-                                <rect key="frame" x="16" y="65" width="343" height="142"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCX-er-Eaa">
                                 <rect key="frame" x="238" y="230" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -74,6 +70,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q19-wZ-fKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-946.39999999999998" y="231.63418290854574"/>
+        </scene>
+        <!--Wildezine View Controller-->
+        <scene sceneID="pBU-LH-lvB">
+            <objects>
+                <viewController id="1rH-yi-6Xe" customClass="WildezineViewController" customModule="SSFS_Today" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rdi-ta-8GX"/>
+                        <viewControllerLayoutGuide type="bottom" id="a7I-7a-ZEG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fhe-1T-ELY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9d6-eZ-FZy">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9d6-eZ-FZy" firstAttribute="leading" secondItem="Fhe-1T-ELY" secondAttribute="leading" id="EdR-tj-exa"/>
+                            <constraint firstItem="9d6-eZ-FZy" firstAttribute="top" secondItem="rdi-ta-8GX" secondAttribute="bottom" id="YKG-WG-Rzs"/>
+                            <constraint firstAttribute="trailing" secondItem="9d6-eZ-FZy" secondAttribute="trailing" id="gE4-hd-LgP"/>
+                            <constraint firstItem="a7I-7a-ZEG" firstAttribute="top" secondItem="9d6-eZ-FZy" secondAttribute="bottom" id="vcV-Ja-IZY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webViewContainer" destination="9d6-eZ-FZy" id="ntH-xi-ET6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="epL-BN-SM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-166" y="-95"/>
         </scene>
         <!--Athletics-->
         <scene sceneID="Rha-G9-ZRG">
@@ -188,24 +217,6 @@
             </objects>
             <point key="canvasLocation" x="-946" y="959"/>
         </scene>
-        <!--Wildezine View Controller-->
-        <scene sceneID="Y8Z-Ix-YaD">
-            <objects>
-                <viewController storyboardIdentifier="wildezine" id="3t1-xI-y6N" customClass="WildezineViewController" customModule="SSFS_Today" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8a0-w4-6yH"/>
-                        <viewControllerLayoutGuide type="bottom" id="Jw5-vU-J5O"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eoJ-VN-9QB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NR7-wg-vZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-210" y="-441"/>
-        </scene>
         <!--Lunch-->
         <scene sceneID="jWO-kN-bkZ">
             <objects>
@@ -273,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUJ-Og-zIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31" y="232"/>
+            <point key="canvasLocation" x="593" y="232"/>
         </scene>
         <!--Library/Beestro-->
         <scene sceneID="4F7-b4-q0S">
@@ -427,7 +438,6 @@
         <image name="Image" width="28" height="28"/>
         <image name="Lunch" width="28" height="28"/>
         <image name="MeetingHouse.JPG" width="2048" height="1536"/>
-        <image name="SSFS_Logo.jpg" width="343" height="142"/>
         <image name="Sports" width="28" height="28"/>
     </resources>
 </document>

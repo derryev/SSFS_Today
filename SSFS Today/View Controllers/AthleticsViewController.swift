@@ -19,28 +19,13 @@ class AthleticsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(sender:)))
-        leftSwipe.direction = .left
-        view.addGestureRecognizer(leftSwipe)
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(sender:)))
-        rightSwipe.direction = .right
-        view.addGestureRecognizer(rightSwipe)
-        
         // Do any additional setup after loading the view. The "let activities" sends the date to the getGames function in my after school file, and then runs it in this file.
         
         setAthleticEvents()
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
         appDelegate.athleticsViewController = self
     }
-    
-    @objc func handleSwipes(sender:UISwipeGestureRecognizer) {
-        if (sender.direction == .left) {
-            tabBarController?.selectedIndex = 2
-        }
-        else  if (sender.direction == .right) {
-            tabBarController?.selectedIndex = 0
-        }
-    }
+
   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

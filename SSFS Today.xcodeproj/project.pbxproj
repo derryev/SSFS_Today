@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D32805E21F6AC04100598CC3 /* DateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32805E11F6AC04100598CC3 /* DateFunctions.swift */; };
-		D34CE6591F9E5A3B00805D5E /* SSFS_Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D34CE6581F9E5A3A00805D5E /* SSFS_Logo.jpg */; };
-		D34CE65B1F9E5BA600805D5E /* WildezineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34CE65A1F9E5BA600805D5E /* WildezineViewController.swift */; };
+		D331BF7D1FA3B18F00C0C380 /* WildezineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331BF7C1FA3B18F00C0C380 /* WildezineViewController.swift */; };
 		D37DC6171F9A5E1A004075F0 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC6161F9A5E1A004075F0 /* ScheduleTableViewController.swift */; };
 		D37DC6191F9A78AF004075F0 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC6181F9A78AF004075F0 /* Block.swift */; };
 		D39DB5151F680CFE0074E952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB5141F680CFE0074E952 /* AppDelegate.swift */; };
@@ -48,8 +47,7 @@
 
 /* Begin PBXFileReference section */
 		D32805E11F6AC04100598CC3 /* DateFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFunctions.swift; sourceTree = "<group>"; };
-		D34CE6581F9E5A3A00805D5E /* SSFS_Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SSFS_Logo.jpg; sourceTree = "<group>"; };
-		D34CE65A1F9E5BA600805D5E /* WildezineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildezineViewController.swift; sourceTree = "<group>"; };
+		D331BF7C1FA3B18F00C0C380 /* WildezineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildezineViewController.swift; sourceTree = "<group>"; };
 		D37DC6161F9A5E1A004075F0 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		D37DC6181F9A78AF004075F0 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		D39DB5111F680CFE0074E952 /* SSFS Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SSFS Today.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +101,7 @@
 		D38E16A21F7D3030007BD6DA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D34CE65A1F9E5BA600805D5E /* WildezineViewController.swift */,
+				D331BF7C1FA3B18F00C0C380 /* WildezineViewController.swift */,
 				D37DC6161F9A5E1A004075F0 /* ScheduleTableViewController.swift */,
 				D39DB5421F680EFF0074E952 /* MenuViewController.swift */,
 				D39DB5521F68963E0074E952 /* LibraryBeestroViewController.swift */,
@@ -150,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				D39DB54A1F6851CF0074E952 /* MeetingHouse.JPG */,
-				D34CE6581F9E5A3A00805D5E /* SSFS_Logo.jpg */,
 				D38E16A21F7D3030007BD6DA /* View Controllers */,
 				D38E16A31F7D3049007BD6DA /* Model Files */,
 				D39DB5141F680CFE0074E952 /* AppDelegate.swift */,
@@ -295,7 +292,6 @@
 			files = (
 				D39DB54B1F6851CF0074E952 /* MeetingHouse.JPG in Resources */,
 				D39DB51F1F680CFE0074E952 /* LaunchScreen.storyboard in Resources */,
-				D34CE6591F9E5A3B00805D5E /* SSFS_Logo.jpg in Resources */,
 				D39DB51C1F680CFE0074E952 /* Assets.xcassets in Resources */,
 				D39DB51A1F680CFE0074E952 /* Main.storyboard in Resources */,
 			);
@@ -329,12 +325,12 @@
 				D39DB5451F680F550074E952 /* Menu.swift in Sources */,
 				D39DB5151F680CFE0074E952 /* AppDelegate.swift in Sources */,
 				D39DB5511F6896230074E952 /* LibraryBeestroData.swift in Sources */,
+				D331BF7D1FA3B18F00C0C380 /* WildezineViewController.swift in Sources */,
 				D39DB5471F680FC10074E952 /* DailyMenu.swift in Sources */,
 				D32805E21F6AC04100598CC3 /* DateFunctions.swift in Sources */,
 				D37DC6191F9A78AF004075F0 /* Block.swift in Sources */,
 				D3C14A431F99119D009DC970 /* Schedule.swift in Sources */,
 				D39DB5431F680EFF0074E952 /* MenuViewController.swift in Sources */,
-				D34CE65B1F9E5BA600805D5E /* WildezineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

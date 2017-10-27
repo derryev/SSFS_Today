@@ -21,12 +21,6 @@ class LibraryBeestroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(sender:)))
-        leftSwipe.direction = .left
-        view.addGestureRecognizer(leftSwipe)
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(sender:)))
-        rightSwipe.direction = .right
-        view.addGestureRecognizer(rightSwipe)
         
         setViewLabelData()
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
@@ -49,15 +43,6 @@ class LibraryBeestroViewController: UIViewController {
         beestroHoursLabel.text = yarnallData[3]
         announcementsLabel.text = yarnallData[4]
         
-    }
-    
-    @objc func handleSwipes(sender:UISwipeGestureRecognizer) {
-        if (sender.direction == .left) {
-            tabBarController?.selectedIndex = 0
-        }
-        else  if (sender.direction == .right) {
-            tabBarController?.selectedIndex = 1
-        }
     }
     
 
