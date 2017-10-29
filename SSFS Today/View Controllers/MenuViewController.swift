@@ -15,20 +15,20 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var lunchMenuText: UITextView!
+    var todaysDate: String?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setMenuLabels()
-    
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
         appDelegate.lunchViewController = self
         
     }
     
     func setMenuLabels() {
-        let day = DailyMenu()
-        dateLabel.text = today.today()
+        let day = DailyMenu(forDay: todaysDate!)
+        dateLabel.text = todaysDate!
         var starting = 0
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center

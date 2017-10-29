@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D32805E21F6AC04100598CC3 /* DateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32805E11F6AC04100598CC3 /* DateFunctions.swift */; };
 		D331BF7D1FA3B18F00C0C380 /* WildezineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331BF7C1FA3B18F00C0C380 /* WildezineViewController.swift */; };
+		D331BF7F1FA61E5700C0C380 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331BF7E1FA61E5700C0C380 /* MainViewController.swift */; };
 		D37DC6171F9A5E1A004075F0 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC6161F9A5E1A004075F0 /* ScheduleTableViewController.swift */; };
 		D37DC6191F9A78AF004075F0 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DC6181F9A78AF004075F0 /* Block.swift */; };
 		D39DB5151F680CFE0074E952 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB5141F680CFE0074E952 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		D32805E11F6AC04100598CC3 /* DateFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFunctions.swift; sourceTree = "<group>"; };
 		D331BF7C1FA3B18F00C0C380 /* WildezineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildezineViewController.swift; sourceTree = "<group>"; };
+		D331BF7E1FA61E5700C0C380 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D37DC6161F9A5E1A004075F0 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		D37DC6181F9A78AF004075F0 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		D39DB5111F680CFE0074E952 /* SSFS Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SSFS Today.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 		D38E16A21F7D3030007BD6DA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D331BF7E1FA61E5700C0C380 /* MainViewController.swift */,
 				D331BF7C1FA3B18F00C0C380 /* WildezineViewController.swift */,
 				D37DC6161F9A5E1A004075F0 /* ScheduleTableViewController.swift */,
 				D39DB5421F680EFF0074E952 /* MenuViewController.swift */,
@@ -325,6 +328,7 @@
 				D39DB5451F680F550074E952 /* Menu.swift in Sources */,
 				D39DB5151F680CFE0074E952 /* AppDelegate.swift in Sources */,
 				D39DB5511F6896230074E952 /* LibraryBeestroData.swift in Sources */,
+				D331BF7F1FA61E5700C0C380 /* MainViewController.swift in Sources */,
 				D331BF7D1FA3B18F00C0C380 /* WildezineViewController.swift in Sources */,
 				D39DB5471F680FC10074E952 /* DailyMenu.swift in Sources */,
 				D32805E21F6AC04100598CC3 /* DateFunctions.swift in Sources */,

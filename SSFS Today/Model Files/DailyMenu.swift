@@ -16,24 +16,25 @@ class DailyMenu {
     var dayMeal: String?
     var fridayMeal: String
     var regExText = String()
-    var dayOfWeek: Int
+    var dayOfWeek: String
     
-    init() {
+    init(forDay dayOfWeek: String) {
+        self.dayOfWeek = dayOfWeek
         let menu = Menu()
-        let today = DateFunctions()
+        //let today = DateFunctions()
         if menu.aMenu != nil {
             var isFriday = false
             var isWeekend = false
-            self.dayOfWeek = today.getCurrentDay()!
-            if self.dayOfWeek == 2 {
+            //self.dayOfWeek = today.getCurrentDay()!
+            if self.dayOfWeek == "Monday" {
                 regExText = "MONDAY(.*?)TUESDAY"
-            } else if self.dayOfWeek == 3 {
+            } else if self.dayOfWeek == "Tuesday" {
                 regExText = "TUESDAY(.*?)WEDNESDAY"
-            } else if self.dayOfWeek == 4 {
+            } else if self.dayOfWeek == "Wednesday" {
                 regExText = "WEDNESDAY(.*?)THURSDAY"
-            } else if self.dayOfWeek == 5 {
+            } else if self.dayOfWeek == "Thursday" {
                 regExText = "THURSDAY(.*?)FRIDAY"
-            } else if self.dayOfWeek == 6 {
+            } else if self.dayOfWeek == "Friday" {
                 regExText = "FRIDAY(.*)"
                 isFriday = true
             } else {
@@ -50,7 +51,7 @@ class DailyMenu {
             }
         
             if (!isWeekend) {
-                if self.dayOfWeek == 2 {
+                if self.dayOfWeek == "Monday" {
                     self.lunchEntree = String(menu.getMenuItem(stringToParse: self.dayMeal!, regExText: "VEGETARIAN ENTR[ÉE]E(.*?)VEGETARIAN"))
                     let tempVegetarianEntree = String(menu.getMenuItem(stringToParse: self.dayMeal!, regExText: "VEGETARIAN ENTR[ÉE]E(.*?)SIDES"))
                     self.vegetarianEntree = String(menu.getMenuItem(stringToParse: tempVegetarianEntree, regExText: "VEGETARIAN ENTR[ÉE]E(.*)"))
@@ -77,7 +78,7 @@ class DailyMenu {
             self.dayMeal = nil
             self.fridayMeal = ""
             self.regExText = ""
-            self.dayOfWeek = 1
+            self.dayOfWeek = "Monday"
         }
     }
     
