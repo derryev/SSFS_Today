@@ -13,6 +13,19 @@ class DateFunctions {
     let date = Date()
     let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     
+    enum SearchDirection {
+        case Next
+        case Previous
+        
+        var calendarOptions: NSCalendar.Options {
+            switch self {
+            case .Next:
+                return .matchNextTime
+            case .Previous:
+                return [.searchBackwards, .matchNextTime]
+            }
+        }
+    }
     func getCurrentDay()->Int?{
         
         let calendar = Calendar.current
@@ -42,16 +55,55 @@ class DateFunctions {
         // code from http://stackoverflow.com/questions/28861091/getting-the-current-day-of-the-week-in-swift . This code gets the day of the current date as an integer (Unlike code in menu view controller, this returns the date instead of the day of week).
     }
     
-    func getDateAsString() -> String {
-        let date = Date()
+    func getDateAsString(forDate: Date) -> String {
+        // let date = Date()
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        let components = calendar.dateComponents([.year, .month, .day], from: forDate)
         
         let year =  components.year
         let month = components.month
         let day = components.day
         
         return String(month!) + "/" + String(day!) + "/" + String(year!)
+    }
+    
+    func getWeekDaysInEnglish() -> [String] {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+        calendar.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale
+        return calendar.weekdaySymbols
+    }
+    
+    
+    func get(direction: SearchDirection, _ dayName: String, considerToday consider: Bool = true) -> Date {
+        let weekdaysName = getWeekDaysInEnglish()
+        
+        assert(weekdaysName.contains(dayName), "weekday symbol should be in form \(weekdaysName)")
+        
+        let nextWeekDayIndex = weekdaysName.index(of: dayName)! + 1 // weekday is in form 1 ... 7 where as index is 0 ... 6
+        
+        let today = Date()
+        
+        let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+        
+        if consider && calendar.component(.weekday, from: today as Date) == nextWeekDayIndex {
+            return today
+        }
+        
+        let nextDateComponent = NSDateComponents()
+        nextDateComponent.weekday = nextWeekDayIndex
+        
+        
+        let date = calendar.nextDate(after: today as Date, matching: nextDateComponent as DateComponents, options: direction.calendarOptions)
+        return date!
+    }
+    
+    func getWeekday(asString forDate: Date) -> String {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.weekday], from: forDate)
+        let day = components.weekday
+        // pasted into here to get day of the week at the top of the screen (See MenuViewController)
+        
+        return weekdays[day! - 1]
     }
 }
 

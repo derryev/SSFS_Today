@@ -13,13 +13,15 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
 
     @IBOutlet weak var dayPicker: UIPickerView!
+    var dateInfo = DateFunctions()
+    var monday: Date?
     
     var weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dayPicker.delegate = self
         self.dayPicker.dataSource = self
-
+        monday = dateInfo.get(direction: .Previous, "Monday", considerToday: true)
         // Do any additional setup after loading the view.
     }
 
@@ -45,9 +47,23 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dateToBePassed = Calendar.current.date(byAdding: .day, value: dayPicker.selectedRow(inComponent: 0), to: monday!)
         if segue.identifier == "lunch" {
             if let destinationVC = segue.destination as? MenuViewController {
+                
                 destinationVC.todaysDate = weekdays[dayPicker.selectedRow(inComponent: 0)]
+            }
+        } else if segue.identifier == "athletics" {
+            if let destinationVC = segue.destination as? AthleticsViewController {
+                destinationVC.todaysDate = dateToBePassed
+            }
+        } else if segue.identifier == "schedule" {
+            if let destinationVC = segue.destination as? ScheduleTableViewController {
+                destinationVC.todaysDate = dateToBePassed
+            }
+        } else if segue.identifier == "beestro" {
+            if let destinationVC = segue.destination as? LibraryBeestroViewController {
+                destinationVC.todaysDate = dateToBePassed
             }
         }
     }

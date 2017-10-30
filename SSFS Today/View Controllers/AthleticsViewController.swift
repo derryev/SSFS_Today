@@ -14,6 +14,7 @@ class AthleticsViewController: UIViewController {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var gamesTodayText: UITextView!
+    var todaysDate: Date?
     
     
     override func viewDidLoad() {
@@ -34,8 +35,8 @@ class AthleticsViewController: UIViewController {
     
     func setAthleticEvents() {
         var schedule = Athletics()
-        dateLabel.text = today.today()
-        if let activities = schedule.fetchDataFromServer(for: today.getDateAsString()) {
+        dateLabel.text = today.getWeekday(asString: todaysDate!)
+        if let activities = schedule.fetchDataFromServer(for: today.getDateAsString(forDate: todaysDate!)) {
             gamesTodayText.text = activities
         } else {
             gamesTodayText.text = "No Data Found"

@@ -13,10 +13,11 @@ class ScheduleTableViewController: UITableViewController {
     var blocks = [Block]()
     let today = DateFunctions()
     var todaysSchedule = Schedule()
+    var todaysDate: Date?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let schedule = todaysSchedule.fetchDataFromServer(for: today.getDateAsString()) {
+        if let schedule = todaysSchedule.fetchDataFromServer(for: today.getDateAsString(forDate: todaysDate!)) {
             blocks = schedule
         }
 

@@ -18,6 +18,7 @@ class LibraryBeestroViewController: UIViewController {
     
     var yarnallData = [String]()
     let today = DateFunctions()
+    var todaysDate: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +37,8 @@ class LibraryBeestroViewController: UIViewController {
     
     func setViewLabelData() {
         var beestroLibraryHours = LibraryBeestroData()
-        yarnallData = beestroLibraryHours.fetchDataFromServer(for: today.getDateAsString())
-        dateLabel.text = today.today()
+        yarnallData = beestroLibraryHours.fetchDataFromServer(for: today.getDateAsString(forDate: todaysDate!))
+        dateLabel.text = today.getWeekday(asString: todaysDate!)
         libraryHours.text = yarnallData[1]
         libAnnouncements.text = yarnallData[2]
         beestroHoursLabel.text = yarnallData[3]
