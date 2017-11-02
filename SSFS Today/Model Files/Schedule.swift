@@ -8,20 +8,17 @@
 
 import Foundation
 
-struct Schedule {
+class Schedule {
     
     var dataArray = [String]()
     
-    mutating func fetchDataFromServer(for date: String) -> [Block]? {
+    init() {
+        fetchDataFromServer()
+    }
+    
+    func fetchDataFromServer() {
         if let dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/calendar.csv") {
             dataArray = cleanRows(stringData: dataFile)
-            if let schedule =  getTodaysSchedule(date: date) {
-                return schedule
-            } else {
-                return nil
-            }
-        } else {
-            return nil
         }
     }
     
@@ -39,7 +36,7 @@ struct Schedule {
         }
     }
     
-    func cleanRows(stringData:String)->[String]{
+    func cleanRows(stringData: String)->[String]{
         var cleanFile = stringData
         cleanFile = cleanFile.replacingOccurrences(of: "\r", with: "\n")
         cleanFile = cleanFile.replacingOccurrences(of: "\n\n", with: "\n")

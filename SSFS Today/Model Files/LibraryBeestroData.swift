@@ -8,17 +8,18 @@
 
 import Foundation
 
-struct LibraryBeestroData {
+class LibraryBeestroData {
     
     var dataFile = String()
     var dataArray = [String]()
     
-    mutating func fetchDataFromServer(for date: String) -> [String] {
+    init() {
+        fetchDataFromServer()
+    }
+    
+    func fetchDataFromServer() {
         if let dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/library_beestro.csv") {
             dataArray = cleanRows(stringData: dataFile)
-            return returnDateInformation(date: date)
-        } else {
-            return ["No Data Found", "No Data Found", "No Data Found", "No Data Found", "No Data Found"]
         }
     }
     

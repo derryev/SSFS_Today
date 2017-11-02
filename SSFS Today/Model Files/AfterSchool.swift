@@ -8,17 +8,18 @@
 
 import Foundation
 
-struct Athletics {
+class Athletics {
     
     var dataFile = String()
     var dataArray = [String]()
     
-    mutating func fetchDataFromServer(for date: String) -> String? {
+    init() {
+        fetchDataFromServer()
+    }
+    
+    func fetchDataFromServer() {
         if let dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/athletics_schedule.csv") {
             dataArray = cleanRows(stringData: dataFile)
-            return getGames(date: date)
-        } else {
-            return nil
         }
     }
     

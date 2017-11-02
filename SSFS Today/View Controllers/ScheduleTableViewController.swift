@@ -17,9 +17,9 @@ class ScheduleTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let schedule = todaysSchedule.fetchDataFromServer(for: today.getDateAsString(forDate: todaysDate!)) {
-            blocks = schedule
-        }
+//        if let schedule = todaysSchedule.fetchDataFromServer(for: today.getDateAsString(forDate: todaysDate!)) {
+//            blocks = schedule
+//        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

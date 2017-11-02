@@ -22,9 +22,9 @@ class AthleticsViewController: UIViewController {
         
         // Do any additional setup after loading the view. The "let activities" sends the date to the getGames function in my after school file, and then runs it in this file.
         
-        setAthleticEvents()
+       // setAthleticEvents()
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
-        appDelegate.athleticsViewController = self
+        //appDelegate.athleticsViewController = self
     }
 
   
@@ -33,16 +33,16 @@ class AthleticsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setAthleticEvents() {
-        var schedule = Athletics()
-        dateLabel.text = today.getWeekday(asString: todaysDate!)
-        if let activities = schedule.fetchDataFromServer(for: today.getDateAsString(forDate: todaysDate!)) {
-            gamesTodayText.text = activities
-        } else {
-            gamesTodayText.text = "No Data Found"
-        }
-        
-    }
+//    func setAthleticEvents() {
+//        var schedule = Athletics()
+//        dateLabel.text = today.getWeekday(asString: todaysDate!)
+//        if let activities = schedule.fetchDataFromServer(for: today.getDateAsString(forDate: todaysDate!)) {
+//            gamesTodayText.text = activities
+//        } else {
+//            gamesTodayText.text = "No Data Found"
+//        }
+//
+//    }
     
     
     /*

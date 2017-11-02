@@ -23,9 +23,9 @@ class LibraryBeestroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setViewLabelData()
+        //setViewLabelData()
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
-        appDelegate.beestroViewController = self
+        //appDelegate.beestroViewController = self
     }
     
 
@@ -35,16 +35,16 @@ class LibraryBeestroViewController: UIViewController {
     }
     
     
-    func setViewLabelData() {
-        var beestroLibraryHours = LibraryBeestroData()
-        yarnallData = beestroLibraryHours.fetchDataFromServer(for: today.getDateAsString(forDate: todaysDate!))
-        dateLabel.text = today.getWeekday(asString: todaysDate!)
-        libraryHours.text = yarnallData[1]
-        libAnnouncements.text = yarnallData[2]
-        beestroHoursLabel.text = yarnallData[3]
-        announcementsLabel.text = yarnallData[4]
-        
-    }
+//    func setViewLabelData() {
+//        var beestroLibraryHours = LibraryBeestroData()
+//        yarnallData = beestroLibraryHours.fetchDataFromServer(for: today.getDateAsString(forDate: todaysDate!))
+//        dateLabel.text = today.getWeekday(asString: todaysDate!)
+//        libraryHours.text = yarnallData[1]
+//        libAnnouncements.text = yarnallData[2]
+//        beestroHoursLabel.text = yarnallData[3]
+//        announcementsLabel.text = yarnallData[4]
+//
+//    }
     
 
 }

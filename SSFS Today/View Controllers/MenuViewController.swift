@@ -22,7 +22,7 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         setMenuLabels()
         let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
-        appDelegate.lunchViewController = self
+        //appDelegate.lunchViewController = self
         
     }
     

@@ -63,6 +63,10 @@ class WildezineViewController: UIViewController, WKNavigationDelegate {
     }
     
 
+    @IBAction func returnToMainView(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
