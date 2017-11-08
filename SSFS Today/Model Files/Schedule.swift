@@ -19,6 +19,7 @@ class Schedule {
     func fetchDataFromServer() {
         if let dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/calendar.csv") {
             dataArray = cleanRows(stringData: dataFile)
+            print(dataArray[0])
         }
     }
     

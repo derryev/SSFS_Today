@@ -92,7 +92,7 @@ struct Menu {
         var name: String = ""
         do {
             let regex = try NSRegularExpression(pattern: regExText, options: NSRegularExpression.Options.caseInsensitive)
-            let matches = regex.matches(in: stringToParse as String, options: [], range: NSMakeRange(0, stringToParse.characters.count))
+            let matches = regex.matches(in: stringToParse as String, options: [], range: NSRange(stringToParse.startIndex..., in: stringToParse))
             if let match = matches.first {
                 let range = match.range(at: 1)
                 if let swiftRange = rangeFromNSRange(nsRange: range, forString: stringToParse as String) {
@@ -109,7 +109,7 @@ struct Menu {
         var name: String = ""
         do {
             let regex = try NSRegularExpression(pattern: regExText, options: NSRegularExpression.Options.caseInsensitive)
-            let matches = regex.matches(in: stringToParse as String, options: [], range: NSMakeRange(0, stringToParse.characters.count))
+            let matches = regex.matches(in: stringToParse as String, options: [], range: NSRange(stringToParse.startIndex..., in: stringToParse))
             if let match = matches.first {
                 let range = match.range(at: 1)
                 if let swiftRange = rangeFromNSRange(nsRange: range, forString: stringToParse as String) {

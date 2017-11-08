@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D307AC831FB328F60080394F /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D307AC821FB328F60080394F /* LandingPageViewController.swift */; };
 		D32805E21F6AC04100598CC3 /* DateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32805E11F6AC04100598CC3 /* DateFunctions.swift */; };
 		D331BF7D1FA3B18F00C0C380 /* WildezineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331BF7C1FA3B18F00C0C380 /* WildezineViewController.swift */; };
 		D331BF7F1FA61E5700C0C380 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331BF7E1FA61E5700C0C380 /* MainViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D307AC821FB328F60080394F /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		D32805E11F6AC04100598CC3 /* DateFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFunctions.swift; sourceTree = "<group>"; };
 		D331BF7C1FA3B18F00C0C380 /* WildezineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildezineViewController.swift; sourceTree = "<group>"; };
 		D331BF7E1FA61E5700C0C380 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				D331BF7E1FA61E5700C0C380 /* MainViewController.swift */,
+				D307AC821FB328F60080394F /* LandingPageViewController.swift */,
 				D331BF7C1FA3B18F00C0C380 /* WildezineViewController.swift */,
 			);
 			path = "View Controllers";
@@ -319,6 +322,7 @@
 				D32805E21F6AC04100598CC3 /* DateFunctions.swift in Sources */,
 				D37DC6191F9A78AF004075F0 /* Block.swift in Sources */,
 				D3C14A431F99119D009DC970 /* Schedule.swift in Sources */,
+				D307AC831FB328F60080394F /* LandingPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
