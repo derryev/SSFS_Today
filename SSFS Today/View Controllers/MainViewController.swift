@@ -44,7 +44,15 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         super.viewDidLoad()
         self.dayPicker.delegate = self
         self.dayPicker.dataSource = self
-        daySelected.currentPage = 0
+        // dateInfo.getCurrentDay() returns an int between 1 (Sunday) and 7 (Saturday).  Need to subtract 2
+        // to align with the Page control which goes from 0 -4 (M-F).
+        let currentDayOfWeek = dateInfo.getCurrentDay()! - 2
+        if currentDayOfWeek >= 0 && currentDayOfWeek < 5 {
+            daySelected.currentPage = currentDayOfWeek
+        } else {
+            daySelected.currentPage = 0
+        }
+        
         
         self.swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.left
         self.swipeGestureRight.direction = UISwipeGestureRecognizerDirection.right
@@ -59,6 +67,7 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         monday = dateInfo.get(direction: .Previous, "Monday", considerToday: true)
         // Do any additional setup after loading the view.
         dayPicker.selectRow(initialPickerSelection, inComponent: 0, animated: false)
+        showDayPicker(show: !dayPickerOpened, animateTime: animateTimeStd)
         updateView()
     }
     
@@ -98,37 +107,56 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func setMenuLabels(forDay date: String) {
+        let menuString = ""
+        let myMutableString = NSMutableAttributedString(
+            string: menuString,
+            attributes: [NSAttributedStringKey.font:UIFont(
+                name: "Helvetica",
+                size: 17.0)!])
+        let myAddedStringAttributes:[NSAttributedStringKey:Any]? = [
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):UIFont(
+                name: "Helvetica-Bold",
+                size: 17.0)!,
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor(displayP3Red: 0, green: 102/255, blue: 71/200, alpha: 1.0)
+        ]
         let day = DailyMenu(forDay: date)
-        var starting = 0
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-        let lunchEntreeTitle = "Lunch Entrée\n"
-        let vegetarianEntreeTitle = "\n\nVegetarian Entrée\n"
-        let sidesTitle = "\n\nSides\n"
-        let downtownDeliTitle = "\n\nDowntown Deli\n"
-        let lunchMenu = lunchEntreeTitle + day.lunchEntree + vegetarianEntreeTitle + day.vegetarianEntree + sidesTitle + day.sides.replacingOccurrences(of: ",", with: "\n") + downtownDeliTitle +
-            day.downtownDeli
-        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: lunchMenu)
-        attributedText.addAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17)], range: NSRange(location:starting, length: lunchMenu.count))
-        attributedText.addAttributes([NSAttributedStringKey.paragraphStyle: paragraphStyle], range: NSRange(location:starting, length: lunchMenu.count))
-        attributedText.addAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)], range: NSRange(location: starting, length: lunchEntreeTitle.count))
-        starting += lunchEntreeTitle.count + day.lunchEntree.count
-        attributedText.addAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)], range: NSRange(location: starting, length: vegetarianEntreeTitle.count))
-        starting += vegetarianEntreeTitle.count + day.vegetarianEntree.count
-        attributedText.addAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)], range: NSRange(location: starting, length: sidesTitle.count))
-        starting += sidesTitle.count + day.sides.count
-        attributedText.addAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)], range: NSRange(location: starting, length: downtownDeliTitle.count))
-        mainText.attributedText = attributedText
+        let titles = ["Lunch Entrée", "Vegetarian Entrée",  "Sides","Downtown Deli"]
+        let menuItems = [day.lunchEntree, day.vegetarianEntree, day.sides, day.downtownDeli]
+        for index in 0...titles.count - 1 {
+            let titleString = NSAttributedString(string: titles[index] + "\n", attributes: myAddedStringAttributes)
+            let timeString = NSAttributedString(string: menuItems[index] + "\n\n")
+            myMutableString.append(titleString)
+            myMutableString.append(timeString)
+        }
+        mainText.attributedText = myMutableString
         
     }
     
     func setScheduleView(weekday: String) {
+        let scheduleString = ""
+        let myMutableString = NSMutableAttributedString(
+            string: scheduleString,
+            attributes: [NSAttributedStringKey.font:UIFont(
+                name: "Helvetica",
+                size: 17.0)!])
+        let myAddedStringAttributes:[NSAttributedStringKey:Any]? = [
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):UIFont(
+                name: "Helvetica-Bold",
+                size: 17.0)!,
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor(displayP3Red: 0, green: 102/255, blue: 71/200, alpha: 1.0)
+        ]
         if let todaysSchedule = schedule.getTodaysSchedule(date: weekday) {
-            var schedString = ""
+            //var schedString = ""
             for block in todaysSchedule {
-                schedString += block.title + "\t" + block.classTime + "\n"
+                print(block.title)
+                let titleString = NSAttributedString(string: block.title + "\n", attributes: myAddedStringAttributes)
+                let timeString = NSAttributedString(string: block.classTime + "\n\n")
+                myMutableString.append(titleString)
+                myMutableString.append(timeString)
+                
+                //schedString += block.title + "\t" + block.classTime + "\n"
             }
-            mainText.text = schedString
+            mainText.attributedText = myMutableString
         } else {
             mainText.text = "No Schedule Information Found"
         }
@@ -141,13 +169,28 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func setLibraryBeestroView(weekday: String) {
+        let infoString = ""
+        let myMutableString = NSMutableAttributedString(
+            string: infoString,
+            attributes: [NSAttributedStringKey.font:UIFont(
+                name: "Helvetica",
+                size: 17.0)!])
+        let myAddedStringAttributes:[NSAttributedStringKey:Any]? = [
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):UIFont(
+                name: "Helvetica-Bold",
+                size: 17.0)!,
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor(displayP3Red: 0, green: 102/255, blue: 71/200, alpha: 1.0)
+        ]
         let titles = ["Library Hours", "Library Announcements", "Beestro Hours", "Beestro Announcements"]
         let announcements = beestro.returnDateInformation(date: weekday)
-        var info = ""
+        //var info = ""
         for index in 0...titles.count - 1 {
-            info += titles[index] + "\n" + announcements[index + 1] + "\n\n"
+            let titleString = NSAttributedString(string: titles[index] + "\n", attributes: myAddedStringAttributes)
+            let timeString = NSAttributedString(string: announcements[index + 1] + "\n\n")
+            myMutableString.append(titleString)
+            myMutableString.append(timeString)
         }
-        mainText.text = info
+        mainText.attributedText = myMutableString
     }
     
     func updateView() {
