@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -106,7 +105,7 @@
                                 </constraints>
                             </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="HPZ-nt-hE8">
-                                <rect key="frame" x="171" y="170.66666666666666" width="71" height="37"/>
+                                <rect key="frame" x="171.66666666666666" y="170.66666666666666" width="71" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.0" green="0.40000000000000002" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.81960784313725488" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
@@ -121,15 +120,16 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yy-NX-eep">
-                                <rect key="frame" x="32" y="576" width="350" height="160"/>
+                                <rect key="frame" x="47" y="576" width="320" height="160"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="0bp-b8-0gc"/>
                                     <constraint firstAttribute="height" constant="160" id="Sgw-JB-OuD"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNe-c5-aEA">
-                                <rect key="frame" x="32" y="546" width="350" height="30"/>
-                                <state key="normal" title="Button" image="picker_down_thin"/>
+                                <rect key="frame" x="47" y="546" width="320" height="30"/>
+                                <state key="normal" image="picker_down_thin"/>
                                 <connections>
                                     <action selector="dayAction:" destination="iaD-Ud-KFX" eventType="touchUpInside" id="Vkg-9I-qaI"/>
                                 </connections>
@@ -149,7 +149,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ci-8j-bTh">
-                                <rect key="frame" x="174" y="137" width="66.666666666666686" height="33.666666666666657"/>
+                                <rect key="frame" x="173.66666666666666" y="137" width="67" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.40000000000000002" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -159,17 +159,15 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="MoU-K5-UlS" secondAttribute="trailing" id="1JF-vc-het"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vqe-53-cKK" secondAttribute="trailing" constant="20" symbolic="YES" id="2Pw-TK-wod"/>
-                            <constraint firstItem="dNe-c5-aEA" firstAttribute="trailing" secondItem="5yy-NX-eep" secondAttribute="trailing" id="2xg-EW-AOW"/>
                             <constraint firstItem="vSW-OH-6Wa" firstAttribute="top" secondItem="5yy-NX-eep" secondAttribute="bottom" id="4UA-3b-TlY"/>
                             <constraint firstItem="a81-mf-Tk0" firstAttribute="top" secondItem="2Ci-8j-bTh" secondAttribute="bottom" constant="-52.5" id="7Fs-XQ-Kb6"/>
                             <constraint firstItem="HPZ-nt-hE8" firstAttribute="centerX" secondItem="uCT-oQ-riR" secondAttribute="centerX" id="92F-B1-GHo"/>
-                            <constraint firstItem="dNe-c5-aEA" firstAttribute="leading" secondItem="uCT-oQ-riR" secondAttribute="leadingMargin" constant="12" id="Ci7-d7-nVW"/>
                             <constraint firstItem="MoU-K5-UlS" firstAttribute="top" secondItem="K11-45-aWf" secondAttribute="bottom" constant="-73" id="F0B-9p-50J"/>
-                            <constraint firstItem="dNe-c5-aEA" firstAttribute="leading" secondItem="5yy-NX-eep" secondAttribute="leading" id="FIH-jl-EzD"/>
                             <constraint firstItem="RGf-ea-11a" firstAttribute="centerX" secondItem="uCT-oQ-riR" secondAttribute="centerX" id="K4m-rv-ApI"/>
                             <constraint firstItem="HPZ-nt-hE8" firstAttribute="top" secondItem="2Ci-8j-bTh" secondAttribute="bottom" id="L9f-4v-5HW"/>
                             <constraint firstItem="RGf-ea-11a" firstAttribute="top" secondItem="HPZ-nt-hE8" secondAttribute="bottom" constant="-7.6666666666666572" id="MjC-MK-ylw"/>
                             <constraint firstItem="5yy-NX-eep" firstAttribute="centerX" secondItem="uCT-oQ-riR" secondAttribute="centerX" id="NJb-yQ-EE5"/>
+                            <constraint firstItem="dNe-c5-aEA" firstAttribute="centerX" secondItem="uCT-oQ-riR" secondAttribute="centerX" id="RTS-50-yOR"/>
                             <constraint firstItem="MoU-K5-UlS" firstAttribute="leading" secondItem="uCT-oQ-riR" secondAttribute="leading" id="WND-4Q-71m"/>
                             <constraint firstItem="a81-mf-Tk0" firstAttribute="centerX" secondItem="uCT-oQ-riR" secondAttribute="centerX" id="cdP-hw-wVI"/>
                             <constraint firstItem="MoU-K5-UlS" firstAttribute="top" secondItem="4Fs-N4-bFa" secondAttribute="bottom" constant="25" id="dln-Cx-ODQ"/>
