@@ -20,7 +20,6 @@
 		D39DB5351F680CFE0074E952 /* SSFS_TodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB5341F680CFE0074E952 /* SSFS_TodayUITests.swift */; };
 		D39DB5451F680F550074E952 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB5441F680F550074E952 /* Menu.swift */; };
 		D39DB5471F680FC10074E952 /* DailyMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB5461F680FC10074E952 /* DailyMenu.swift */; };
-		D39DB54B1F6851CF0074E952 /* MeetingHouse.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D39DB54A1F6851CF0074E952 /* MeetingHouse.JPG */; };
 		D39DB54F1F6873230074E952 /* AfterSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB54E1F6873230074E952 /* AfterSchool.swift */; };
 		D39DB5511F6896230074E952 /* LibraryBeestroData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB5501F6896230074E952 /* LibraryBeestroData.swift */; };
 		D3C14A431F99119D009DC970 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C14A421F99119D009DC970 /* Schedule.swift */; };
@@ -63,7 +62,6 @@
 		D39DB5361F680CFE0074E952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D39DB5441F680F550074E952 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		D39DB5461F680FC10074E952 /* DailyMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyMenu.swift; sourceTree = "<group>"; };
-		D39DB54A1F6851CF0074E952 /* MeetingHouse.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = MeetingHouse.JPG; path = ../MeetingHouse.JPG; sourceTree = "<group>"; };
 		D39DB54E1F6873230074E952 /* AfterSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterSchool.swift; sourceTree = "<group>"; };
 		D39DB5501F6896230074E952 /* LibraryBeestroData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryBeestroData.swift; sourceTree = "<group>"; };
 		D3C14A421F99119D009DC970 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 		D39DB5131F680CFE0074E952 /* SSFS Today */ = {
 			isa = PBXGroup;
 			children = (
-				D39DB54A1F6851CF0074E952 /* MeetingHouse.JPG */,
 				D38E16A21F7D3030007BD6DA /* View Controllers */,
 				D38E16A31F7D3049007BD6DA /* Model Files */,
 				D39DB5141F680CFE0074E952 /* AppDelegate.swift */,
@@ -284,7 +281,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D39DB54B1F6851CF0074E952 /* MeetingHouse.JPG in Resources */,
 				D39DB51F1F680CFE0074E952 /* LaunchScreen.storyboard in Resources */,
 				D39DB51C1F680CFE0074E952 /* Assets.xcassets in Resources */,
 				D39DB51A1F680CFE0074E952 /* Main.storyboard in Resources */,

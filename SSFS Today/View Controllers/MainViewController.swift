@@ -13,21 +13,32 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var mainText: UITextView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var dayPicker: UIPickerView!
+    @IBOutlet weak var titleGraphic: UIImageView!
+    
+    
+    // Instance variables for each of the different data types to be displayed
     var dateInfo = DateFunctions()
-    var monday: Date?
     var menu = Menu()
     var todaysDate: String?
     var schedule = Schedule()
     var athleticEvents = Athletics()
     var beestro = LibraryBeestroData()
-    @IBOutlet weak var daySelected: UIPageControl!
-    var initialPickerSelection = 0
+    
+    @IBOutlet weak var daySelected: UIPageControl! //row of dots across top of view to indicate day (M-F)
+    var initialPickerSelection = 0 // Variable to receive what button was pushed on previous page
+    var monday: Date? // Since school weeks are keyed off Monday, need a starting point.
     
     var pickerDataSource = ["Lunch", "Schedule", "Athletics", "Beestro/Library"]
     let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    
     let swipeGestureLeft = UISwipeGestureRecognizer()
     let swipeGestureRight = UISwipeGestureRecognizer()
     
+    /*
+     The followng set of variables are used to control the opening and closing of the picker.  Initially
+     the picker is hidden, but when the button is tapped, it animates opening so that a different screen
+     can be selected.
+    */
     @IBOutlet weak var dayPickerMarginTop: NSLayoutConstraint!
     @IBOutlet weak var dayPickerHeight: NSLayoutConstraint!
     @IBOutlet weak var topicSelectedButton: UIButton!
@@ -44,6 +55,7 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         super.viewDidLoad()
         self.dayPicker.delegate = self
         self.dayPicker.dataSource = self
+        
         // dateInfo.getCurrentDay() returns an int between 1 (Sunday) and 7 (Saturday).  Need to subtract 2
         // to align with the Page control which goes from 0 -4 (M-F).
         let currentDayOfWeek = dateInfo.getCurrentDay()! - 2
@@ -107,20 +119,24 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func setMenuLabels(forDay date: String) {
+        titleGraphic.image = #imageLiteral(resourceName: "menu_title")
+       // The following lines set up the string formatting for the label titles and then data displayed
         let menuString = ""
         let myMutableString = NSMutableAttributedString(
             string: menuString,
             attributes: [NSAttributedStringKey.font:UIFont(
                 name: "Helvetica",
                 size: 17.0)!])
+        
+        // RGB Value of 0, 102, 71 corresponds to official SSFS Green
         let myAddedStringAttributes:[NSAttributedStringKey:Any]? = [
             NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):UIFont(
                 name: "Helvetica-Bold",
                 size: 17.0)!,
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor(displayP3Red: 0, green: 102/255, blue: 71/200, alpha: 1.0)
+            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor(displayP3Red: 0, green: 101/255, blue: 71/200, alpha: 1.0)
         ]
         let day = DailyMenu(forDay: date)
-        let titles = ["Lunch Entrée", "Vegetarian Entrée",  "Sides","Downtown Deli"]
+        let titles = ["Lunch Entrée", "Vegetarian Entrée", "Sides", "Downtown Deli"]
         let menuItems = [day.lunchEntree, day.vegetarianEntree, day.sides, day.downtownDeli]
         for index in 0...titles.count - 1 {
             let titleString = NSAttributedString(string: titles[index] + "\n", attributes: myAddedStringAttributes)
@@ -133,6 +149,7 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func setScheduleView(weekday: String) {
+        titleGraphic.image = #imageLiteral(resourceName: "schedule_title")
         let scheduleString = ""
         let myMutableString = NSMutableAttributedString(
             string: scheduleString,
@@ -146,7 +163,7 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor(displayP3Red: 0, green: 102/255, blue: 71/200, alpha: 1.0)
         ]
         if let todaysSchedule = schedule.getTodaysSchedule(date: weekday) {
-            //var schedString = ""
+            
             for block in todaysSchedule {
                 print(block.title)
                 let titleString = NSAttributedString(string: block.title + "\n", attributes: myAddedStringAttributes)
@@ -154,7 +171,6 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
                 myMutableString.append(titleString)
                 myMutableString.append(timeString)
                 
-                //schedString += block.title + "\t" + block.classTime + "\n"
             }
             mainText.attributedText = myMutableString
         } else {
@@ -164,11 +180,16 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func setAthleticsView(weekday: String) {
+        titleGraphic.image = #imageLiteral(resourceName: "athletics_title")
+        // TODO: When games start appearing again, will need to format the information that comes back
+        // to make it look more like the other pages.  May have to adjust what comes back from the model
+        // class
         let games = athleticEvents.getGames(date: weekday)
         mainText.text = games
     }
     
     func setLibraryBeestroView(weekday: String) {
+        titleGraphic.image = #imageLiteral(resourceName: "library_beestro_title")
         let infoString = ""
         let myMutableString = NSMutableAttributedString(
             string: infoString,
@@ -183,7 +204,7 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         ]
         let titles = ["Library Hours", "Library Announcements", "Beestro Hours", "Beestro Announcements"]
         let announcements = beestro.returnDateInformation(date: weekday)
-        //var info = ""
+        
         for index in 0...titles.count - 1 {
             let titleString = NSAttributedString(string: titles[index] + "\n", attributes: myAddedStringAttributes)
             let timeString = NSAttributedString(string: announcements[index + 1] + "\n\n")
@@ -195,9 +216,13 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     func updateView() {
         setButtonTitle() // Makes sure the arrow points the correct direction depending on if the picker is visible or not.
+        
+        // Calculates which is the current day by adding an integer to the value of the most recent Monday.
         let dateToBePassed = Calendar.current.date(byAdding: .day, value: daySelected.currentPage, to: monday!)
-        dateLabel.text = dateInfo.getWeekday(asString: dateToBePassed!)
-        let day = dateInfo.getDateAsString(forDate: dateToBePassed!)
+        dateLabel.text = dateInfo.getWeekday(asString: dateToBePassed!) //Monday, Tuesday, etc.
+        let day = dateInfo.getDateAsString(forDate: dateToBePassed!) // 11/13/2017, 11/14/2017, etc.
+        
+        //Updates the view when the picker is changed
         switch dayPicker.selectedRow(inComponent: 0) {
         case 0:
             let currentDay = weekdays[daySelected.currentPage]
@@ -237,23 +262,17 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func setButtonTitle() {
-        var buttonTitle = ""
         if dayPickerOpened {
-            buttonTitle = pickerDataSource[dayPicker.selectedRow(inComponent: 0)] + " ↓"
+            // Button with Down arrow is shown
+            topicSelectedButton.setImage(#imageLiteral(resourceName: "picker_down_thin"), for: .normal)
         } else {
-            buttonTitle = pickerDataSource[dayPicker.selectedRow(inComponent: 0)] + " ↑"
+            // Button with Up arrow is shown
+            topicSelectedButton.setImage(#imageLiteral(resourceName: "picker_up_thin"), for: .normal)
         }
-        topicSelectedButton.setTitle(buttonTitle, for: .normal)
     }
     
+    // Method to control the opening and closing of the picker.  Activates when the button above it is pressed
     @IBAction func dayAction(_ sender: UIButton) {
         showDayPicker(show: !dayPickerOpened, animateTime: animateTimeStd)
     }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    
-    
-
 }

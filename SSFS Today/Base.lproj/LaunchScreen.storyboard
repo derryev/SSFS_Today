@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,25 +21,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MeetingHouse.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="bBs-TM-SyN">
-                                <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_screen" translatesAutoresizingMaskIntoConstraints="NO" id="Bb5-pF-oar">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="bBs-TM-SyN" secondAttribute="bottom" id="DaN-fP-Ijy"/>
-                            <constraint firstAttribute="trailing" secondItem="bBs-TM-SyN" secondAttribute="trailing" id="IOG-x4-MPf"/>
-                            <constraint firstItem="bBs-TM-SyN" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="20" id="VgC-5e-2lH"/>
-                            <constraint firstItem="bBs-TM-SyN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="ytj-Tu-cJt"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Bb5-pF-oar" secondAttribute="bottom" id="SUZ-Qd-47B"/>
+                            <constraint firstItem="Bb5-pF-oar" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Zro-5s-add"/>
+                            <constraint firstItem="Bb5-pF-oar" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="Zy8-sf-PGZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Bb5-pF-oar" secondAttribute="trailing" id="fXz-xX-y8i"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="51.5625" y="374.4140625"/>
         </scene>
     </scenes>
     <resources>
-        <image name="MeetingHouse.JPG" width="2048" height="1536"/>
+        <image name="launch_screen" width="768" height="1024"/>
     </resources>
 </document>

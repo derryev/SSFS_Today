@@ -23,13 +23,8 @@ class LandingPageViewController: UIViewController {
     
 
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+    Depending on which button was pressed, the picker on the main page will
+     update to reflect the current screen.
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "lunch" {
