@@ -11,8 +11,9 @@ import WebKit
 
 class WildezineViewController: UIViewController, WKNavigationDelegate {
 
+    @IBOutlet weak var activtyIndicator: UIActivityIndicatorView!
     @IBOutlet weak var webViewContainer: UIView!
-    var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    //var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     var webView: WKWebView!
     
     
@@ -22,11 +23,9 @@ class WildezineViewController: UIViewController, WKNavigationDelegate {
         webView = WKWebView(frame: webViewContainer.bounds, configuration: WKWebViewConfiguration())
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         webView.navigationDelegate = self
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.center = webView.center
-        
+        activtyIndicator.hidesWhenStopped = true
         self.webViewContainer.addSubview(webView)
-        self.webViewContainer.addSubview(activityIndicator)
+        self.webViewContainer.addSubview(activtyIndicator)
         
         let myURL = URL(string: "https://wildezine.com/")
         let myRequest = URLRequest(url: myURL!)
@@ -55,15 +54,14 @@ class WildezineViewController: UIViewController, WKNavigationDelegate {
     
     func showActivityIndicator(show: Bool) {
         if show {
-            activityIndicator.startAnimating()
+            activtyIndicator.startAnimating()
         } else {
-            activityIndicator.stopAnimating()
+            activtyIndicator.stopAnimating()
         }
         
     }
     
-
-    @IBAction func returnToMainView(_ sender: UIBarButtonItem) {
+    @IBAction func returnToMainView(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
