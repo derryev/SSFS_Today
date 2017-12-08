@@ -275,4 +275,7 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBAction func dayAction(_ sender: UIButton) {
         showDayPicker(show: !dayPickerOpened, animateTime: animateTimeStd)
     }
+    @IBAction func returnToMainView(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }

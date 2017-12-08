@@ -29,7 +29,7 @@
                                 <rect key="frame" x="64" y="45" width="286" height="671"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccr-Dw-Rst">
-                                        <rect key="frame" x="0.0" y="0.0" width="286" height="134.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="134"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ccr-Dw-Rst" secondAttribute="height" multiplier="32:15" id="Brf-fk-CQZ"/>
                                         </constraints>
@@ -39,7 +39,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwm-kT-QwO">
-                                        <rect key="frame" x="0.0" y="134.33333333333334" width="286" height="134.00000000000003"/>
+                                        <rect key="frame" x="0.0" y="134" width="286" height="134.33333333333337"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="rwm-kT-QwO" secondAttribute="height" multiplier="32:15" id="hZ8-ME-Z4J"/>
                                         </constraints>
@@ -154,7 +154,7 @@
                                 <rect key="frame" x="16" y="20" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <segue destination="Kxi-mw-lwN" kind="show" identifier="" id="kl0-B6-8py"/>
+                                    <action selector="returnToMainView:" destination="iaD-Ud-KFX" eventType="touchUpInside" id="hQZ-Zy-EpZ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K11-45-aWf">
@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q19-wZ-fKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-586" y="260"/>
+            <point key="canvasLocation" x="-193" y="200"/>
         </scene>
         <!--Wildezine View Controller-->
         <scene sceneID="pBU-LH-lvB">
@@ -273,6 +273,6 @@
         <image name="wildezine big button" width="320" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lsu-Q2-0ag"/>
+        <segue reference="wvT-pa-dGf"/>
     </inferredMetricsTieBreakers>
 </document>
