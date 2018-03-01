@@ -14,18 +14,17 @@ class DailyMenu {
     var sides = String()
     var downtownDeli = String()
     var dayMeal: String?
-    var fridayMeal: String
     var regExText = String()
     var dayOfWeek: String
     
     init(forDay dayOfWeek: String) {
         self.dayOfWeek = dayOfWeek
         let menu = Menu()
-        //let today = DateFunctions()
+        
         if menu.aMenu != nil {
-            var isFriday = false
+            
             var isWeekend = false
-            //self.dayOfWeek = today.getCurrentDay()!
+            
             if self.dayOfWeek == "Monday" {
                 regExText = "MONDAY(.*?)TUESDAY"
             } else if self.dayOfWeek == "Tuesday" {
@@ -36,19 +35,12 @@ class DailyMenu {
                 regExText = "THURSDAY(.*?)FRIDAY"
             } else if self.dayOfWeek == "Friday" {
                 regExText = "FRIDAY(.*)"
-                isFriday = true
             } else {
                 isWeekend = true
             }
         
-            if isFriday == false {
-                self.dayMeal = String(menu.getLunch(stringToParse: menu.aMenu!, regExText: regExText))
-                self.fridayMeal = String("") //Have to set self.fridayMeal as something, otherwise error.
-
-            } else {
-                self.fridayMeal = String(menu.getLunch(stringToParse: menu.aMenu!, regExText: regExText))
-                self.dayMeal = String(menu.getLunch(stringToParse: fridayMeal, regExText: regExText)) //Every other weekday is mentioned only once in the xml file, so because Friday is mentioned twice it grabs the first Friday the first time (which is the wrong one). This runs it twice, so that the first Friday is cut out the first time, and the correct Friday is grabbed the second time.
-            }
+            self.dayMeal = String(menu.getLunch(stringToParse: menu.aMenu!, regExText: regExText))
+            
         
             if (!isWeekend) {
                 if self.dayOfWeek == "Monday" {
@@ -76,7 +68,7 @@ class DailyMenu {
             self.sides = "No Side Information"
             self.downtownDeli = "No Deli Information"
             self.dayMeal = nil
-            self.fridayMeal = ""
+            //self.fridayMeal = ""
             self.regExText = ""
             self.dayOfWeek = "Monday"
         }
