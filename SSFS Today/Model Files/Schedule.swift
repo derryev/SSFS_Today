@@ -17,7 +17,8 @@ class Schedule {
     }
     
     func fetchDataFromServer() {
-        if let dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/calendar.csv") {
+        // The file below is generated after two Python scripts are run.
+        if let dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/cal_file_sorted.csv") {
             dataArray = cleanRows(stringData: dataFile)
         }
     }
