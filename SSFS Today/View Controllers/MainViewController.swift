@@ -43,6 +43,7 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var dayPickerHeight: NSLayoutConstraint!
     @IBOutlet weak var topicSelectedButton: UIButton!
     
+    // Variables below are used to animate the date picker when it is touched
     var dayPickerOpened: Bool = true    // state variable
     let dayPickerHeightOpened: CGFloat = 160
     let dayPickerHeightClosed: CGFloat = 0
