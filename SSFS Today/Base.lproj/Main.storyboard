@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Kxi-mw-lwN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Kxi-mw-lwN">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -135,6 +136,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fze-PI-AOo">
+                                <rect key="frame" x="319" y="500" width="32" height="30"/>
+                                <state key="normal" title="Rate"/>
+                                <connections>
+                                    <action selector="rateTodaysLunch:" destination="iaD-Ud-KFX" eventType="touchUpInside" id="aVD-dk-WOf"/>
+                                </connections>
+                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yy-NX-eep">
                                 <rect key="frame" x="47" y="576" width="320" height="160"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -183,6 +191,7 @@
                             <constraint firstItem="HPZ-nt-hE8" firstAttribute="top" secondItem="2Ci-8j-bTh" secondAttribute="bottom" id="L9f-4v-5HW"/>
                             <constraint firstItem="RGf-ea-11a" firstAttribute="top" secondItem="HPZ-nt-hE8" secondAttribute="bottom" constant="-7.6666666666666572" id="MjC-MK-ylw"/>
                             <constraint firstItem="5yy-NX-eep" firstAttribute="centerX" secondItem="uCT-oQ-riR" secondAttribute="centerX" id="NJb-yQ-EE5"/>
+                            <constraint firstItem="fze-PI-AOo" firstAttribute="leading" secondItem="RGf-ea-11a" secondAttribute="trailing" constant="-48" id="OB7-Rk-Cxu"/>
                             <constraint firstItem="dNe-c5-aEA" firstAttribute="centerX" secondItem="uCT-oQ-riR" secondAttribute="centerX" id="RTS-50-yOR"/>
                             <constraint firstItem="MoU-K5-UlS" firstAttribute="leading" secondItem="uCT-oQ-riR" secondAttribute="leading" id="WND-4Q-71m"/>
                             <constraint firstItem="a81-mf-Tk0" firstAttribute="centerX" secondItem="uCT-oQ-riR" secondAttribute="centerX" id="cdP-hw-wVI"/>
@@ -191,6 +200,7 @@
                             <constraint firstItem="vSW-OH-6Wa" firstAttribute="top" secondItem="MoU-K5-UlS" secondAttribute="bottom" id="f2T-rx-V5Y"/>
                             <constraint firstItem="Vqe-53-cKK" firstAttribute="leading" secondItem="uCT-oQ-riR" secondAttribute="leading" constant="16" id="lbA-eS-3dt"/>
                             <constraint firstItem="5yy-NX-eep" firstAttribute="top" secondItem="dNe-c5-aEA" secondAttribute="bottom" id="pBX-YS-7cK"/>
+                            <constraint firstItem="fze-PI-AOo" firstAttribute="top" secondItem="a81-mf-Tk0" secondAttribute="bottom" constant="-40" id="sMJ-fI-4Ll"/>
                             <constraint firstItem="K11-45-aWf" firstAttribute="centerX" secondItem="uCT-oQ-riR" secondAttribute="centerX" id="sWj-bp-DjH"/>
                             <constraint firstItem="Vqe-53-cKK" firstAttribute="top" secondItem="4Fs-N4-bFa" secondAttribute="bottom" id="ur9-xf-WOI"/>
                             <constraint firstItem="2Ci-8j-bTh" firstAttribute="centerX" secondItem="uCT-oQ-riR" secondAttribute="centerX" id="uvH-8g-7o6"/>
@@ -204,13 +214,150 @@
                         <outlet property="dayPickerMarginTop" destination="pBX-YS-7cK" id="Diu-A9-Zig"/>
                         <outlet property="daySelected" destination="HPZ-nt-hE8" id="A0u-V5-Swr"/>
                         <outlet property="mainText" destination="RGf-ea-11a" id="6Zh-wZ-Fco"/>
+                        <outlet property="ratingButton" destination="fze-PI-AOo" id="1sh-qr-cEV"/>
                         <outlet property="titleGraphic" destination="K11-45-aWf" id="lwI-Gx-KoG"/>
                         <outlet property="topicSelectedButton" destination="dNe-c5-aEA" id="0U5-w2-wqm"/>
+                        <segue destination="XjZ-P8-oqr" kind="presentation" identifier="ratingScreen" id="G1N-du-exo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q19-wZ-fKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-193" y="200"/>
+            <point key="canvasLocation" x="-586" y="259"/>
+        </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="iig-3e-qfL">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="XjZ-P8-oqr" customClass="PopUpViewController" customModule="SSFS_Today" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZfX-Jk-7ux"/>
+                        <viewControllerLayoutGuide type="bottom" id="j6u-Xp-GPv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RIt-34-Ck0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POE-fl-ZzA">
+                                <rect key="frame" x="37" y="248.66666666666663" width="340" height="240"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a5H-Na-aC8" customClass="RatingController" customModule="SSFS_Today" customModuleProvider="target">
+                                        <rect key="frame" x="87.666666666666686" y="29.000000000000028" width="165" height="25"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFq-nj-FAh">
+                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                <state key="normal" image="Open Star"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tr4-Z1-hAH">
+                                                <rect key="frame" x="34.999999999999986" y="0.0" width="25" height="25"/>
+                                                <state key="normal" image="Open Star"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zh2-CH-vth">
+                                                <rect key="frame" x="69.999999999999986" y="0.0" width="25" height="25"/>
+                                                <state key="normal" image="Open Star"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQq-vA-q8Q">
+                                                <rect key="frame" x="104.99999999999999" y="0.0" width="25.000000000000014" height="25"/>
+                                                <state key="normal" image="Open Star"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pI-V1-ETZ">
+                                                <rect key="frame" x="140" y="0.0" width="25" height="25"/>
+                                                <state key="normal" image="Open Star"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gVG-sr-YO3" customClass="RatingController" customModule="SSFS_Today" customModuleProvider="target">
+                                        <rect key="frame" x="87.666666666666686" y="91.000000000000028" width="165" height="25"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pa-r5-JI2">
+                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                <state key="normal" image="Open Star"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbZ-ws-9P5">
+                                                <rect key="frame" x="34.999999999999986" y="0.0" width="25" height="25"/>
+                                                <state key="normal" image="Open Star"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUy-Ex-0Xx">
+                                                <rect key="frame" x="69.999999999999986" y="0.0" width="25" height="25"/>
+                                                <state key="normal" image="Open Star"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCL-J6-bt5">
+                                                <rect key="frame" x="104.99999999999999" y="0.0" width="25.000000000000014" height="25"/>
+                                                <state key="normal" image="Open Star"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh7-ns-JtO">
+                                                <rect key="frame" x="140" y="0.0" width="25" height="25"/>
+                                                <state key="normal" image="Open Star"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entree Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL1-VW-E37">
+                                        <rect key="frame" x="119" y="0.0" width="103" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegetarian Entree Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MG9-II-JUh">
+                                        <rect key="frame" x="75.333333333333329" y="62.000000000000036" width="189.33333333333337" height="20.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZU-ye-TSR">
+                                        <rect key="frame" x="133" y="124.00000000000001" width="75" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Feedback" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YzK-vT-1qH">
+                                        <rect key="frame" x="17" y="152.00000000000003" width="306" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQU-se-RUZ">
+                                        <rect key="frame" x="145" y="202.00000000000003" width="49" height="30"/>
+                                        <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitRatingAndDismiss:" destination="XjZ-P8-oqr" eventType="touchUpInside" id="gLY-8p-bzt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="YzK-vT-1qH" firstAttribute="width" secondItem="POE-fl-ZzA" secondAttribute="width" multiplier="0.9" id="DVe-IL-Eyq"/>
+                                    <constraint firstItem="gVG-sr-YO3" firstAttribute="centerX" secondItem="POE-fl-ZzA" secondAttribute="centerX" id="Gqw-OR-5nC"/>
+                                    <constraint firstItem="MG9-II-JUh" firstAttribute="centerX" secondItem="POE-fl-ZzA" secondAttribute="centerX" id="I7s-47-O2r"/>
+                                    <constraint firstItem="gVG-sr-YO3" firstAttribute="top" secondItem="MG9-II-JUh" secondAttribute="bottom" constant="8.6666666666666288" id="Khx-UI-WGs"/>
+                                    <constraint firstItem="a5H-Na-aC8" firstAttribute="top" secondItem="PL1-VW-E37" secondAttribute="bottom" constant="8.6666666666666679" id="LQ4-ve-C0L"/>
+                                    <constraint firstItem="PL1-VW-E37" firstAttribute="top" secondItem="POE-fl-ZzA" secondAttribute="top" id="Oqp-gS-USi"/>
+                                    <constraint firstAttribute="width" constant="340" id="PDQ-DK-4VR"/>
+                                    <constraint firstItem="MG9-II-JUh" firstAttribute="top" secondItem="Zh2-CH-vth" secondAttribute="bottom" constant="7.9999999999999716" id="Qmt-t1-yzg"/>
+                                    <constraint firstItem="LZU-ye-TSR" firstAttribute="top" secondItem="gVG-sr-YO3" secondAttribute="bottom" constant="7.9999999999999716" id="RXF-OY-Rbh"/>
+                                    <constraint firstItem="LZU-ye-TSR" firstAttribute="centerX" secondItem="POE-fl-ZzA" secondAttribute="centerX" id="RZv-dv-1Mk"/>
+                                    <constraint firstItem="PL1-VW-E37" firstAttribute="centerX" secondItem="POE-fl-ZzA" secondAttribute="centerX" id="Sek-Sa-w3K"/>
+                                    <constraint firstAttribute="bottom" secondItem="sQU-se-RUZ" secondAttribute="bottom" constant="8" id="XlL-PX-5ml"/>
+                                    <constraint firstItem="YzK-vT-1qH" firstAttribute="top" secondItem="LZU-ye-TSR" secondAttribute="bottom" constant="7.6666666666666572" id="kzZ-qj-MY3"/>
+                                    <constraint firstItem="sQU-se-RUZ" firstAttribute="centerX" secondItem="POE-fl-ZzA" secondAttribute="centerX" id="qHV-WX-eBX"/>
+                                    <constraint firstAttribute="height" constant="240" id="sMp-Ja-3av"/>
+                                    <constraint firstItem="a5H-Na-aC8" firstAttribute="centerX" secondItem="POE-fl-ZzA" secondAttribute="centerX" id="vUe-cd-bAO"/>
+                                    <constraint firstItem="YzK-vT-1qH" firstAttribute="centerX" secondItem="POE-fl-ZzA" secondAttribute="centerX" id="xka-j6-HLt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="POE-fl-ZzA" firstAttribute="centerY" secondItem="RIt-34-Ck0" secondAttribute="centerY" id="EvD-vN-H5R"/>
+                            <constraint firstItem="POE-fl-ZzA" firstAttribute="centerX" secondItem="RIt-34-Ck0" secondAttribute="centerX" id="lGm-tR-Nc8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentField" destination="YzK-vT-1qH" id="JA0-Rc-kFG"/>
+                        <outlet property="entreeRatingStackView" destination="a5H-Na-aC8" id="WEc-ud-UIT"/>
+                        <outlet property="vegieRatingStackView" destination="gVG-sr-YO3" id="0GK-Zw-eNO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Xn-mP-WBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="283" y="259"/>
         </scene>
         <!--Wildezine View Controller-->
         <scene sceneID="pBU-LH-lvB">
@@ -259,13 +406,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="epL-BN-SM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1470" y="1144"/>
+            <point key="canvasLocation" x="-1471" y="1022"/>
         </scene>
     </scenes>
     <resources>
         <image name="Athletics Button" width="320" height="150"/>
         <image name="Bell Schedule Button" width="320" height="150"/>
         <image name="Library Beestro Button" width="320" height="150"/>
+        <image name="Open Star" width="25" height="25"/>
         <image name="Todays Lunch Button" width="320" height="150"/>
         <image name="bark" width="375" height="622"/>
         <image name="main_screen" width="768" height="1024"/>

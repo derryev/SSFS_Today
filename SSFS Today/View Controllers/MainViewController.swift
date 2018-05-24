@@ -14,6 +14,7 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var dayPicker: UIPickerView!
     @IBOutlet weak var titleGraphic: UIImageView!
+    @IBOutlet weak var ratingButton: UIButton!
     
     
     // Instance variables for each of the different data types to be displayed
@@ -23,6 +24,10 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     var schedule = Schedule()
     var athleticEvents = Athletics()
     var beestro = LibraryBeestroData()
+    
+    // variables to be used to pass to rating view
+    var lunch = ""
+    var vegie = ""
     
     @IBOutlet weak var daySelected: UIPageControl! //row of dots across top of view to indicate day (M-F)
     var initialPickerSelection = 0 // Variable to receive what button was pushed on previous page
@@ -51,11 +56,13 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     let dayPickerMarginTopClosed: CGFloat = 0
     let animateTimeStd: TimeInterval = 0.25
     let animateTimeZero: TimeInterval = 0.0
+    var currentLunchRating: Rating?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dayPicker.delegate = self
         self.dayPicker.dataSource = self
+        
         
         // dateInfo.getCurrentDay() returns an int between 1 (Sunday) and 7 (Saturday).  Need to subtract 2
         // to align with the Page control which goes from 0 -4 (M-F).
@@ -120,6 +127,13 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func setMenuLabels(forDay date: String) {
+        // User can only rate the lunch for the current day
+        if date == dateInfo.today() {
+            ratingButton.isHidden = false
+        } else {
+            ratingButton.isHidden = true
+        }
+        
         titleGraphic.image = #imageLiteral(resourceName: "menu_title")
        // The following lines set up the string formatting for the label titles and then data displayed
         let menuString = ""
@@ -139,6 +153,12 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         let day = DailyMenu(forDay: date)
         let titles = ["Lunch Entrée", "Vegetarian Entrée", "Sides", "Downtown Deli"]
         let menuItems = [day.lunchEntree, day.vegetarianEntree, day.sides, day.downtownDeli]
+        // Variables to be passed to rating
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
+        currentLunchRating = Rating(for: day.lunchEntree, vegieMeal: day.vegetarianEntree, phoneID: uuid!, date: dateInfo.getDateAsString(forDate: Date()))
+        lunch = day.lunchEntree
+        vegie = day.vegetarianEntree
+        
         for index in 0...titles.count - 1 {
             let titleString = NSAttributedString(string: titles[index] + "\n", attributes: myAddedStringAttributes)
             let timeString = NSAttributedString(string: menuItems[index] + "\n\n")
@@ -150,6 +170,7 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func setScheduleView(weekday: String) {
+        ratingButton.isHidden = true
         titleGraphic.image = #imageLiteral(resourceName: "schedule_title")
         let scheduleString = ""
         let myMutableString = NSMutableAttributedString(
@@ -181,6 +202,7 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func setAthleticsView(weekday: String) {
+        ratingButton.isHidden = true
         titleGraphic.image = #imageLiteral(resourceName: "athletics_title")
         // TODO: When games start appearing again, will need to format the information that comes back
         // to make it look more like the other pages.  May have to adjust what comes back from the model
@@ -190,6 +212,7 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func setLibraryBeestroView(weekday: String) {
+        ratingButton.isHidden = true
         titleGraphic.image = #imageLiteral(resourceName: "library_beestro_title")
         let infoString = ""
         let myMutableString = NSMutableAttributedString(
@@ -272,11 +295,24 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         }
     }
     
+    @IBAction func rateTodaysLunch(_ sender: UIButton) {
+        performSegue(withIdentifier: "ratingScreen", sender: Any?.self)
+    }
+    
     // Method to control the opening and closing of the picker.  Activates when the button above it is pressed
     @IBAction func dayAction(_ sender: UIButton) {
         showDayPicker(show: !dayPickerOpened, animateTime: animateTimeStd)
     }
     @IBAction func returnToMainView(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ratingScreen" {
+            if let nextVC = segue.destination as? PopUpViewController {
+                nextVC.rating = currentLunchRating
+                
+            }
+        }
     }
 }

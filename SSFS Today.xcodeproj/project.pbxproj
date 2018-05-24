@@ -22,6 +22,9 @@
 		D39DB5471F680FC10074E952 /* DailyMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB5461F680FC10074E952 /* DailyMenu.swift */; };
 		D39DB54F1F6873230074E952 /* AfterSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB54E1F6873230074E952 /* AfterSchool.swift */; };
 		D39DB5511F6896230074E952 /* LibraryBeestroData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DB5501F6896230074E952 /* LibraryBeestroData.swift */; };
+		D3B0664520B4A3BD00B5D8E1 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0664420B4A3BD00B5D8E1 /* RatingController.swift */; };
+		D3B0664720B609C400B5D8E1 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0664620B609C400B5D8E1 /* PopUpViewController.swift */; };
+		D3B0664920B60E6900B5D8E1 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0664820B60E6900B5D8E1 /* Rating.swift */; };
 		D3C14A431F99119D009DC970 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C14A421F99119D009DC970 /* Schedule.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,9 @@
 		D39DB5461F680FC10074E952 /* DailyMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyMenu.swift; sourceTree = "<group>"; };
 		D39DB54E1F6873230074E952 /* AfterSchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterSchool.swift; sourceTree = "<group>"; };
 		D39DB5501F6896230074E952 /* LibraryBeestroData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryBeestroData.swift; sourceTree = "<group>"; };
+		D3B0664420B4A3BD00B5D8E1 /* RatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
+		D3B0664620B609C400B5D8E1 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		D3B0664820B60E6900B5D8E1 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		D3C14A421F99119D009DC970 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +101,7 @@
 		D38E16A21F7D3030007BD6DA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D3B0664620B609C400B5D8E1 /* PopUpViewController.swift */,
 				D331BF7E1FA61E5700C0C380 /* MainViewController.swift */,
 				D307AC821FB328F60080394F /* LandingPageViewController.swift */,
 				D331BF7C1FA3B18F00C0C380 /* WildezineViewController.swift */,
@@ -105,6 +112,8 @@
 		D38E16A31F7D3049007BD6DA /* Model Files */ = {
 			isa = PBXGroup;
 			children = (
+				D3B0664820B60E6900B5D8E1 /* Rating.swift */,
+				D3B0664420B4A3BD00B5D8E1 /* RatingController.swift */,
 				D3C14A421F99119D009DC970 /* Schedule.swift */,
 				D37DC6181F9A78AF004075F0 /* Block.swift */,
 				D39DB5461F680FC10074E952 /* DailyMenu.swift */,
@@ -310,10 +319,13 @@
 			files = (
 				D39DB54F1F6873230074E952 /* AfterSchool.swift in Sources */,
 				D39DB5451F680F550074E952 /* Menu.swift in Sources */,
+				D3B0664520B4A3BD00B5D8E1 /* RatingController.swift in Sources */,
 				D39DB5151F680CFE0074E952 /* AppDelegate.swift in Sources */,
 				D39DB5511F6896230074E952 /* LibraryBeestroData.swift in Sources */,
 				D331BF7F1FA61E5700C0C380 /* MainViewController.swift in Sources */,
+				D3B0664920B60E6900B5D8E1 /* Rating.swift in Sources */,
 				D331BF7D1FA3B18F00C0C380 /* WildezineViewController.swift in Sources */,
+				D3B0664720B609C400B5D8E1 /* PopUpViewController.swift in Sources */,
 				D39DB5471F680FC10074E952 /* DailyMenu.swift in Sources */,
 				D32805E21F6AC04100598CC3 /* DateFunctions.swift in Sources */,
 				D37DC6191F9A78AF004075F0 /* Block.swift in Sources */,
