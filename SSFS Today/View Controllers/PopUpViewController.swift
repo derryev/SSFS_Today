@@ -22,8 +22,8 @@ class PopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // Adds a way for the keyboard to be dismissed. User needs to tap outside.
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,8 +44,13 @@ class PopUpViewController: UIViewController {
         request.httpMethod = "POST"
         
         //getting values
-        // TODO: Check to make sure comment field is not blank first
-        let comment = "comment=" + commentField.text!
+        // Make sure the comment field is not blank
+        var comment = ""
+        if commentField.text != nil {
+            comment = "comment=" + commentField.text!
+        } else {
+            comment = "comment=No Comment"
+        }
         let today = "&date=" + (rating?.date)!
         let entreeRating = "&entree_rating=" + String(entreeRatingStackView.starsRating)
         let lunchEntree = "&lunch_entree_string=" + (rating?.lunchEntree)!
@@ -98,5 +103,19 @@ class PopUpViewController: UIViewController {
 
         dismiss(animated: true, completion: nil)
     }
+    // The two functions below move the view up so it can be seen while typing, and then down when the editing is finished.
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        UIView.animate(withDuration: 0.3, animations: {
+//            self.view.frame = CGRect(x:self.view.frame.origin.x, y:self.view.frame.origin.y - 200, width:self.view.frame.size.width, height:self.view.frame.size.height);
+//
+//        })
+//    }
+//
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        UIView.animate(withDuration: 0.3, animations: {
+//            self.viewSupport.frame = CGRect(x:self.viewSupport.frame.origin.x, y:self.viewSupport.frame.origin.y + 200, width:self.viewSupport.frame.size.width, height:self.viewSupport.frame.size.height);
+//
+//        })
+//    }
     
 }

@@ -24,6 +24,7 @@ class RatingController: UIStackView {
         }
         setStarsRating(rating:starsRating)
     }
+    
     func setStarsRating(rating:Int){
         self.starsRating = rating
         let stackSubViews = self.subviews.filter{$0 is UIButton}
