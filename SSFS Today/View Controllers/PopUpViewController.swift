@@ -4,13 +4,14 @@
 //
 //  Created by Brian Wilkinson on 5/23/18.
 //  Copyright © 2018 Brian Wilkinson. All rights reserved.
+// Tutorial found at https://www.simplifiedios.net/swift-php-mysql-tutorial/
 //
 
 import UIKit
 
 class PopUpViewController: UIViewController {
     //URL to our web service
-    let URL_SAVE_RATING = "https://grover.ssfs.org/menus/ratings/createrating.php"
+    let URL_SAVE_RATING = "https://grover.ssfs.org/menus/ratings/api/createrating.php"
     
     var rating: Rating?
     
@@ -47,11 +48,11 @@ class PopUpViewController: UIViewController {
         // Make sure the comment field is not blank
         var comment = ""
         if commentField.text != nil {
-            comment = "comment=" + commentField.text!
+            comment = "&comment=" + commentField.text!
         } else {
-            comment = "comment=No Comment"
+            comment = "&comment=No Comment"
         }
-        let today = "&date=" + (rating?.date)!
+        let today = "date=" + (rating?.date)!
         let entreeRating = "&entree_rating=" + String(entreeRatingStackView.starsRating)
         let lunchEntree = "&lunch_entree_string=" + (rating?.lunchEntree)!
         let phone = "&phone_ID=" + (rating?.phoneID)!
@@ -60,7 +61,7 @@ class PopUpViewController: UIViewController {
         
         
         //creating the post parameter by concatenating the keys and values from text field
-        let postParameters = comment + today + entreeRating + lunchEntree + phone + vegieEntree + vegieRating
+        let postParameters = today + phone + entreeRating + vegieRating + comment + lunchEntree + vegieEntree
         
         //adding the parameters to request body
         request.httpBody = postParameters.data(using: String.Encoding.utf8)
