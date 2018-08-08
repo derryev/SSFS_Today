@@ -21,10 +21,13 @@ class PopUpViewController: UIViewController {
     
     @IBOutlet weak var commentField: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Adds a way for the keyboard to be dismissed. User needs to tap outside.
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -104,19 +107,23 @@ class PopUpViewController: UIViewController {
 
         dismiss(animated: true, completion: nil)
     }
-    // The two functions below move the view up so it can be seen while typing, and then down when the editing is finished.
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        UIView.animate(withDuration: 0.3, animations: {
-//            self.view.frame = CGRect(x:self.view.frame.origin.x, y:self.view.frame.origin.y - 200, width:self.view.frame.size.width, height:self.view.frame.size.height);
-//
-//        })
-//    }
-//
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        UIView.animate(withDuration: 0.3, animations: {
-//            self.viewSupport.frame = CGRect(x:self.viewSupport.frame.origin.x, y:self.viewSupport.frame.origin.y + 200, width:self.viewSupport.frame.size.width, height:self.viewSupport.frame.size.height);
-//
-//        })
-//    }
+    //The two functions below move the view up so it can be seen while typing, and then down when the editing is finished.
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+
     
 }
