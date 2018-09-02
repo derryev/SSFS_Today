@@ -5,6 +5,7 @@
 //  Created by Brian Wilkinson on 5/23/18.
 //  Copyright © 2018 Brian Wilkinson. All rights reserved.
 // Tutorial found at https://www.simplifiedios.net/swift-php-mysql-tutorial/
+// Tutorial for moving view up found at: https://stackoverflow.com/questions/26070242/move-view-with-keyboard-using-swift
 //
 
 import UIKit
@@ -26,6 +27,8 @@ class PopUpViewController: UIViewController {
         super.viewDidLoad()
         // Adds a way for the keyboard to be dismissed. User needs to tap outside.
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
+        // Listens for when the keyboard comes up. Calls functions that move view up.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
