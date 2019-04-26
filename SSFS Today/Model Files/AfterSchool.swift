@@ -21,6 +21,9 @@ class Athletics {
         if let dataFile = readStringFromURL(rawFile: "https://grover.ssfs.org/menus/athletics_schedule.csv") {
             dataArray = cleanRows(stringData: dataFile)
         }
+        else {
+            print("Permission issue with file???")
+        }
     }
     
     

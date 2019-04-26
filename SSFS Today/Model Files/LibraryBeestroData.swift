@@ -50,7 +50,7 @@ class LibraryBeestroData {
         
         for line in dataArray {
             let currentLineArray = line.components(separatedBy: ",")
-            if (currentLineArray[0] == date) {
+            if currentLineArray[0] == date {
                 return currentLineArray
             }
         }

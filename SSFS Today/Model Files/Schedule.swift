@@ -48,8 +48,10 @@ class Schedule {
     func getTodaysSchedule(date: String) -> [Block]? {
         var todaysSchedule = [Block]()
         for line in dataArray {
-            let currentLineArray = line.components(separatedBy: ",")
-            if (currentLineArray[1] == date) {
+            let currentLineArray: [String?] = line.components(separatedBy: ",")
+            // Check to make sure there is not a blank line in the file which would cause an out of bounds error.
+            // Then check to see if the current line has today's date.
+            if currentLineArray[0] != "" && currentLineArray[1] == date {
                 let nextBlock = Block(line)
                 todaysSchedule.append(nextBlock)
             }
