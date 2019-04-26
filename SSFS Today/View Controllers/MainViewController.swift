@@ -74,8 +74,8 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         }
         
         
-        self.swipeGestureLeft.direction = UISwipeGestureRecognizerDirection.left
-        self.swipeGestureRight.direction = UISwipeGestureRecognizerDirection.right
+        self.swipeGestureLeft.direction = UISwipeGestureRecognizer.Direction.left
+        self.swipeGestureRight.direction = UISwipeGestureRecognizer.Direction.right
         
         // add gesture target
         self.swipeGestureLeft.addTarget(self, action: #selector(handleSwipeLeft(sender:)))
@@ -139,16 +139,16 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         let menuString = ""
         let myMutableString = NSMutableAttributedString(
             string: menuString,
-            attributes: [NSAttributedStringKey.font:UIFont(
+            attributes: [NSAttributedString.Key.font:UIFont(
                 name: "Helvetica",
                 size: 17.0)!])
         
         // RGB Value of 0, 102, 71 corresponds to official SSFS Green
-        let myAddedStringAttributes:[NSAttributedStringKey:Any]? = [
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):UIFont(
+        let myAddedStringAttributes:[NSAttributedString.Key:Any]? = [
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue):UIFont(
                 name: "Helvetica-Bold",
                 size: 17.0)!,
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor(displayP3Red: 0, green: 101/255, blue: 71/200, alpha: 1.0)
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue):UIColor(displayP3Red: 0, green: 101/255, blue: 71/200, alpha: 1.0)
         ]
         let day = DailyMenu(forDay: date)
         let titles = ["Lunch Entrée", "Vegetarian Entrée", "Sides", "Downtown Deli"]
@@ -175,14 +175,14 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         let scheduleString = ""
         let myMutableString = NSMutableAttributedString(
             string: scheduleString,
-            attributes: [NSAttributedStringKey.font:UIFont(
+            attributes: [NSAttributedString.Key.font:UIFont(
                 name: "Helvetica",
                 size: 17.0)!])
-        let myAddedStringAttributes:[NSAttributedStringKey:Any]? = [
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):UIFont(
+        let myAddedStringAttributes:[NSAttributedString.Key:Any]? = [
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue):UIFont(
                 name: "Helvetica-Bold",
                 size: 17.0)!,
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor(displayP3Red: 0, green: 102/255, blue: 71/200, alpha: 1.0)
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue):UIColor(displayP3Red: 0, green: 102/255, blue: 71/200, alpha: 1.0)
         ]
         if let todaysSchedule = schedule.getTodaysSchedule(date: weekday) {
             
@@ -217,14 +217,14 @@ class MainViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         let infoString = ""
         let myMutableString = NSMutableAttributedString(
             string: infoString,
-            attributes: [NSAttributedStringKey.font:UIFont(
+            attributes: [NSAttributedString.Key.font:UIFont(
                 name: "Helvetica",
                 size: 17.0)!])
-        let myAddedStringAttributes:[NSAttributedStringKey:Any]? = [
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):UIFont(
+        let myAddedStringAttributes:[NSAttributedString.Key:Any]? = [
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue):UIFont(
                 name: "Helvetica-Bold",
                 size: 17.0)!,
-            NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor(displayP3Red: 0, green: 102/255, blue: 71/200, alpha: 1.0)
+            NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue):UIColor(displayP3Red: 0, green: 102/255, blue: 71/200, alpha: 1.0)
         ]
         let titles = ["Library Hours", "Library Announcements", "Beestro Hours", "Beestro Announcements"]
         let announcements = beestro.returnDateInformation(date: weekday)

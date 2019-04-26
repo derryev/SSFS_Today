@@ -79,7 +79,7 @@ class DateFunctions {
         
         assert(weekdaysName.contains(dayName), "weekday symbol should be in form \(weekdaysName)")
         
-        let nextWeekDayIndex = weekdaysName.index(of: dayName)! + 1 // weekday is in form 1 ... 7 where as index is 0 ... 6
+        let nextWeekDayIndex = weekdaysName.firstIndex(of: dayName)! + 1 // weekday is in form 1 ... 7 where as index is 0 ... 6
         
         let today = Date()
         
