@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,10 @@
 		D3B0664720B609C400B5D8E1 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0664620B609C400B5D8E1 /* PopUpViewController.swift */; };
 		D3B0664920B60E6900B5D8E1 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B0664820B60E6900B5D8E1 /* Rating.swift */; };
 		D3C14A431F99119D009DC970 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C14A421F99119D009DC970 /* Schedule.swift */; };
+		D71A490A2A0E79990026EE82 /* AthleticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A49092A0E79990026EE82 /* AthleticsViewController.swift */; };
+		D71A49122A0E7ADB0026EE82 /* LibraryBeestroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A49112A0E7ADB0026EE82 /* LibraryBeestroViewController.swift */; };
+		D71A49142A0E80340026EE82 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A49132A0E80340026EE82 /* MenuViewController.swift */; };
+		D71A49162A0E80480026EE82 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A49152A0E80480026EE82 /* ScheduleTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		D3B0664620B609C400B5D8E1 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		D3B0664820B60E6900B5D8E1 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		D3C14A421F99119D009DC970 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		D71A49092A0E79990026EE82 /* AthleticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AthleticsViewController.swift; sourceTree = "<group>"; };
+		D71A49112A0E7ADB0026EE82 /* LibraryBeestroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryBeestroViewController.swift; sourceTree = "<group>"; };
+		D71A49132A0E80340026EE82 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D71A49152A0E80480026EE82 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +109,13 @@
 		D38E16A21F7D3030007BD6DA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D71A49092A0E79990026EE82 /* AthleticsViewController.swift */,
 				D3B0664620B609C400B5D8E1 /* PopUpViewController.swift */,
+				D71A49152A0E80480026EE82 /* ScheduleTableViewController.swift */,
 				D331BF7E1FA61E5700C0C380 /* MainViewController.swift */,
+				D71A49132A0E80340026EE82 /* MenuViewController.swift */,
 				D307AC821FB328F60080394F /* LandingPageViewController.swift */,
+				D71A49112A0E7ADB0026EE82 /* LibraryBeestroViewController.swift */,
 				D331BF7C1FA3B18F00C0C380 /* WildezineViewController.swift */,
 			);
 			path = "View Controllers";
@@ -239,8 +251,9 @@
 		D39DB5091F680CFE0074E952 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Brian Wilkinson";
 				TargetAttributes = {
 					D39DB5101F680CFE0074E952 = {
@@ -317,15 +330,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71A49162A0E80480026EE82 /* ScheduleTableViewController.swift in Sources */,
 				D39DB54F1F6873230074E952 /* AfterSchool.swift in Sources */,
 				D39DB5451F680F550074E952 /* Menu.swift in Sources */,
 				D3B0664520B4A3BD00B5D8E1 /* RatingController.swift in Sources */,
 				D39DB5151F680CFE0074E952 /* AppDelegate.swift in Sources */,
 				D39DB5511F6896230074E952 /* LibraryBeestroData.swift in Sources */,
+				D71A490A2A0E79990026EE82 /* AthleticsViewController.swift in Sources */,
 				D331BF7F1FA61E5700C0C380 /* MainViewController.swift in Sources */,
 				D3B0664920B60E6900B5D8E1 /* Rating.swift in Sources */,
 				D331BF7D1FA3B18F00C0C380 /* WildezineViewController.swift in Sources */,
+				D71A49122A0E7ADB0026EE82 /* LibraryBeestroViewController.swift in Sources */,
 				D3B0664720B609C400B5D8E1 /* PopUpViewController.swift in Sources */,
+				D71A49142A0E80340026EE82 /* MenuViewController.swift in Sources */,
 				D39DB5471F680FC10074E952 /* DailyMenu.swift in Sources */,
 				D32805E21F6AC04100598CC3 /* DateFunctions.swift in Sources */,
 				D37DC6191F9A78AF004075F0 /* Block.swift in Sources */,
@@ -410,6 +427,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -434,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -469,6 +487,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -487,10 +506,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -502,7 +522,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 64643K84XW;
 				INFOPLIST_FILE = "SSFS Today/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.ssfs.SSFSToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -515,7 +538,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 64643K84XW;
 				INFOPLIST_FILE = "SSFS Today/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.ssfs.SSFSToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -529,7 +555,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 46PA7GK82E;
 				INFOPLIST_FILE = "SSFS TodayTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.ssfs.SSFS-TodayTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -544,7 +574,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 46PA7GK82E;
 				INFOPLIST_FILE = "SSFS TodayTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.ssfs.SSFS-TodayTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -558,7 +592,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 46PA7GK82E;
 				INFOPLIST_FILE = "SSFS TodayUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.ssfs.SSFS-TodayUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -572,7 +610,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 46PA7GK82E;
 				INFOPLIST_FILE = "SSFS TodayUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.ssfs.SSFS-TodayUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
