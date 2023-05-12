@@ -53,6 +53,7 @@ class Athletics {
         var todaysGames = ""
         for line in dataArray {
             let currentLineArray = line.components(separatedBy: ",")
+            print("date is \(date) and date in array is \(currentLineArray[0])")
             if (currentLineArray[0] == date) {
                 todaysGames += currentLineArray[1] + ": " + currentLineArray[3] + " vs. " + currentLineArray[5] + " (" + currentLineArray[4] + ")" + "\n\n"
             }

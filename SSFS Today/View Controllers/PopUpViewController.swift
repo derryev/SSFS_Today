@@ -77,8 +77,8 @@ class PopUpViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: request as URLRequest){
             data, response, error in
             
-            if error != nil{
-                print("error is \(error)")
+            if let errorMSG = error{
+                print("error is \(errorMSG)")
                 return;
             }
             
