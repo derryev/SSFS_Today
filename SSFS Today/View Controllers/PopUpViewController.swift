@@ -2,8 +2,9 @@
 //  PopUpViewController.swift
 //  SSFS Today
 //
-//  Created by Brian Wilkinson on 5/23/18.
-//  Copyright © 2018 Brian Wilkinson. All rights reserved.
+//  Created by Brian Wilkinson on 9/14/17 on behalf of Sandy Spring Friends School
+//  Copyright © 2017 SSFS. All rights reserved.
+//
 // Tutorial found at https://www.simplifiedios.net/swift-php-mysql-tutorial/
 // Tutorial for moving view up found at: https://stackoverflow.com/questions/26070242/move-view-with-keyboard-using-swift
 //

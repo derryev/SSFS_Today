@@ -2,8 +2,9 @@
 //  Schedule.swift
 //  SSFS Today
 //
-//  Created by Brian Wilkinson on 10/19/17.
-//  Copyright © 2017 Brian Wilkinson. All rights reserved.
+//  Created by Brian Wilkinson on 9/14/17 on behalf of Sandy Spring Friends School
+//  Copyright © 2017 SSFS. All rights reserved.
+//
 //
 
 import Foundation
