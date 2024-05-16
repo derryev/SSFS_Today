@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,12 +26,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Mre-bw-orf">
                                 <rect key="frame" x="64" y="45" width="286" height="671"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccr-Dw-Rst">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYI-uE-HxH">
                                         <rect key="frame" x="0.0" y="0.0" width="286" height="134.33333333333334"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="ccr-Dw-Rst" secondAttribute="height" multiplier="32:15" id="Brf-fk-CQZ"/>
+                                            <constraint firstAttribute="width" secondItem="lYI-uE-HxH" secondAttribute="height" multiplier="32:15" id="5GK-W3-shO"/>
                                         </constraints>
                                         <state key="normal" image="Todays Lunch Button"/>
+                                        <connections>
+                                            <segue destination="Szy-uA-5cd" kind="presentation" modalPresentationStyle="fullScreen" id="dxi-rt-Hpt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwm-kT-QwO">
                                         <rect key="frame" x="0.0" y="134.33333333333334" width="286" height="134.00000000000003"/>
@@ -39,7 +43,7 @@
                                         </constraints>
                                         <state key="normal" image="Bell Schedule Button"/>
                                         <connections>
-                                            <segue destination="iaD-Ud-KFX" kind="show" identifier="schedule" id="wvT-pa-dGf"/>
+                                            <segue destination="iaD-Ud-KFX" kind="presentation" identifier="schedule" modalPresentationStyle="fullScreen" id="wvT-pa-dGf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcA-qG-BRJ">
@@ -49,7 +53,7 @@
                                         </constraints>
                                         <state key="normal" image="Library Beestro Button"/>
                                         <connections>
-                                            <segue destination="iaD-Ud-KFX" kind="show" identifier="beestro" id="iYc-oT-DOG"/>
+                                            <segue destination="iaD-Ud-KFX" kind="presentation" identifier="beestro" modalPresentationStyle="fullScreen" id="iYc-oT-DOG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2a-4K-0pK">
@@ -59,7 +63,7 @@
                                         </constraints>
                                         <state key="normal" image="Athletics Button"/>
                                         <connections>
-                                            <segue destination="iaD-Ud-KFX" kind="show" identifier="athletics" id="Lsu-Q2-0ag"/>
+                                            <segue destination="iaD-Ud-KFX" kind="presentation" identifier="athletics" modalPresentationStyle="fullScreen" id="Lsu-Q2-0ag"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zr-he-oV7">
@@ -73,6 +77,10 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="lYI-uE-HxH" firstAttribute="width" secondItem="lYI-uE-HxH" secondAttribute="height" multiplier="32:15" id="3rR-rP-7VH"/>
+                                    <constraint firstItem="lYI-uE-HxH" firstAttribute="width" secondItem="lYI-uE-HxH" secondAttribute="height" multiplier="32:15" id="uZg-yy-HZx"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -91,6 +99,136 @@
             </objects>
             <point key="canvasLocation" x="-1471.0144927536232" y="259.23913043478262"/>
         </scene>
+        <!--Lunch View Controller-->
+        <scene sceneID="Sd5-Ho-b5K">
+            <objects>
+                <viewController id="Szy-uA-5cd" customClass="LunchViewController" customModule="SSFS_Today" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rQ1-4N-RnM"/>
+                        <viewControllerLayoutGuide type="bottom" id="BqL-4a-j3C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wYX-sz-vCA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="xA6-dm-WsL">
+                                <rect key="frame" x="64" y="189" width="286" height="338"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nm-sE-7QD">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="134"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="2Nm-sE-7QD" secondAttribute="height" multiplier="32:15" id="WII-Te-G4R"/>
+                                        </constraints>
+                                        <state key="normal" image="Untitled-1"/>
+                                        <connections>
+                                            <segue destination="2lY-Rb-QHv" kind="showDetail" id="jFX-3c-X2a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jm-4h-3VK">
+                                        <rect key="frame" x="0.0" y="184" width="286" height="154"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="5jm-4h-3VK" secondAttribute="height" multiplier="32:15" id="Vjh-Wo-2Rz"/>
+                                        </constraints>
+                                        <state key="normal" image="Untitled-2"/>
+                                        <connections>
+                                            <segue destination="CRR-gT-34d" kind="showDetail" id="aQX-DH-cU5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmN-jq-G2R">
+                                <rect key="frame" x="20" y="20" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="returnToMainView:" destination="Szy-uA-5cd" eventType="touchUpInside" id="OsO-fc-BJb"/>
+                                    <action selector="returnToMainView:" destination="iaD-Ud-KFX" eventType="touchUpInside" id="QW8-0e-bqN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xA6-dm-WsL" firstAttribute="top" secondItem="rQ1-4N-RnM" secondAttribute="bottom" constant="189" id="Ckf-Q8-pNP"/>
+                            <constraint firstItem="BqL-4a-j3C" firstAttribute="top" secondItem="xA6-dm-WsL" secondAttribute="bottom" constant="209" id="OMd-DB-4d7"/>
+                            <constraint firstItem="xA6-dm-WsL" firstAttribute="leading" secondItem="wYX-sz-vCA" secondAttribute="leading" constant="64" id="r8n-Ra-AO4"/>
+                            <constraint firstAttribute="trailing" secondItem="xA6-dm-WsL" secondAttribute="trailing" constant="64" id="ukG-B0-ykq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nxa-6M-pzT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-591.304347826087" y="-417.39130434782612"/>
+        </scene>
+        <!--New Menu View Controller-->
+        <scene sceneID="lFw-2T-759">
+            <objects>
+                <viewController id="2lY-Rb-QHv" customClass="NewMenuViewController" customModule="SSFS_Today" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GGM-6O-Vwm"/>
+                        <viewControllerLayoutGuide type="bottom" id="zYU-ML-UgW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ox4-7F-zI1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="P6W-ux-6UB">
+                                <rect key="frame" x="197" y="348" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYX-pj-6Me">
+                                <rect key="frame" x="20" y="43" width="374" height="673"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvm-C6-svR">
+                                <rect key="frame" x="16" y="0.0" width="65" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                <connections>
+                                    <action selector="returnToMainView:" destination="2lY-Rb-QHv" eventType="touchUpInside" id="ENl-Da-64S"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P6W-ux-6UB" firstAttribute="centerX" secondItem="Ox4-7F-zI1" secondAttribute="centerX" id="CPj-so-vhe"/>
+                            <constraint firstItem="zYU-ML-UgW" firstAttribute="top" secondItem="UYX-pj-6Me" secondAttribute="bottom" id="Ft7-Ty-WpQ"/>
+                            <constraint firstItem="Cvm-C6-svR" firstAttribute="top" secondItem="GGM-6O-Vwm" secondAttribute="bottom" id="HHY-n9-Kwx"/>
+                            <constraint firstItem="P6W-ux-6UB" firstAttribute="centerY" secondItem="Ox4-7F-zI1" secondAttribute="centerY" id="Mig-Zf-7lo"/>
+                            <constraint firstItem="UYX-pj-6Me" firstAttribute="top" secondItem="Cvm-C6-svR" secondAttribute="bottom" constant="8" symbolic="YES" id="SM8-0s-goH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UYX-pj-6Me" secondAttribute="trailing" id="nii-u7-bTW"/>
+                            <constraint firstItem="Cvm-C6-svR" firstAttribute="leading" secondItem="Ox4-7F-zI1" secondAttribute="leading" constant="16" id="rVr-vl-tet"/>
+                            <constraint firstItem="UYX-pj-6Me" firstAttribute="leading" secondItem="Ox4-7F-zI1" secondAttribute="leadingMargin" id="ueu-QI-lJH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webViewContainerMenu" destination="UYX-pj-6Me" id="BOb-Jb-JXs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WI7-Rm-DWI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="176.81159420289856" y="-813.58695652173924"/>
+        </scene>
+        <!--Review View Controller-->
+        <scene sceneID="uaY-9f-NFO">
+            <objects>
+                <viewController id="CRR-gT-34d" customClass="ReviewViewController" customModule="SSFS_Today" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t4G-ji-BzZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Gm-WG-deK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GLn-Eo-muG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FxB-mo-gsV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="177" y="-154"/>
+        </scene>
         <!--SSFS Today-->
         <scene sceneID="GE7-w2-Btu">
             <objects>
@@ -100,11 +238,11 @@
                         <viewControllerLayoutGuide type="bottom" id="vSW-OH-6Wa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uCT-oQ-riR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bark" translatesAutoresizingMaskIntoConstraints="NO" id="MoU-K5-UlS">
-                                <rect key="frame" x="0.0" y="25" width="414" height="691"/>
+                                <rect key="frame" x="0.0" y="25" width="414" height="711"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a81-mf-Tk0">
                                 <rect key="frame" x="47" y="98" width="320" height="422"/>
@@ -137,7 +275,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yy-NX-eep">
-                                <rect key="frame" x="47" y="556" width="320" height="160"/>
+                                <rect key="frame" x="47" y="576" width="320" height="160"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="0bp-b8-0gc"/>
@@ -145,7 +283,7 @@
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNe-c5-aEA">
-                                <rect key="frame" x="47" y="526" width="320" height="30"/>
+                                <rect key="frame" x="47" y="546" width="320" height="30"/>
                                 <state key="normal" image="picker_down_thin"/>
                                 <connections>
                                     <action selector="dayAction:" destination="iaD-Ud-KFX" eventType="touchUpInside" id="Vkg-9I-qaI"/>
@@ -214,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q19-wZ-fKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-586" y="259"/>
+            <point key="canvasLocation" x="-581" y="259"/>
         </scene>
         <!--Wildezine View Controller-->
         <scene sceneID="pBU-LH-lvB">
@@ -316,16 +454,21 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iYc-oT-DOG"/>
+        <segue reference="Lsu-Q2-0ag"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Athletics Button" width="320" height="150"/>
         <image name="Bell Schedule Button" width="320" height="150"/>
         <image name="Library Beestro Button" width="320" height="150"/>
         <image name="Todays Lunch Button" width="320" height="150"/>
+        <image name="Untitled-1" width="3888" height="1379"/>
+        <image name="Untitled-2" width="3945" height="1684"/>
         <image name="bark" width="375" height="622"/>
         <image name="main_screen" width="768" height="1024"/>
         <image name="picker_down_thin" width="320" height="30"/>
         <image name="wildezine big button" width="320" height="150"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

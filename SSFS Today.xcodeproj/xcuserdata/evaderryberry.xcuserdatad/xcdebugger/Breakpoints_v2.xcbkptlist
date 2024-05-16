@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C2F2FF86-F1B0-4ADC-A8DE-2D1D3DC20D8D"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3FB634C4-2DCC-49FB-9784-848222B9E2A4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SSFS Today/View Controllers/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "MainViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "3FB634C4-2DCC-49FB-9784-848222B9E2A4 - 6acc932d05d5adfd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SSFS_Today.MainViewController.vegie.getter : Swift.String"
+                  moduleName = "SSFS Today"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evaderryberry/Documents/SSFS_Today/SSFS%20Today/View%20Controllers/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "3FB634C4-2DCC-49FB-9784-848222B9E2A4 - 7223262ef6fa59ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SSFS_Today.MainViewController.vegie.setter : Swift.String"
+                  moduleName = "SSFS Today"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evaderryberry/Documents/SSFS_Today/SSFS%20Today/View%20Controllers/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "3FB634C4-2DCC-49FB-9784-848222B9E2A4 - aacf3fc119c27df9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SSFS_Today.MainViewController.vegie.modify : Swift.String"
+                  moduleName = "SSFS Today"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evaderryberry/Documents/SSFS_Today/SSFS%20Today/View%20Controllers/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "3FB634C4-2DCC-49FB-9784-848222B9E2A4 - 64fdb7ef0e8d5dd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SSFS_Today.MainViewController.vegie.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "SSFS Today"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evaderryberry/Documents/SSFS_Today/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "3FB634C4-2DCC-49FB-9784-848222B9E2A4 - 53f3f36f51c9105"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SSFS_Today.MainViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; SSFS_Today.MainViewController"
+                  moduleName = "SSFS Today"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evaderryberry/Documents/SSFS_Today/SSFS%20Today/View%20Controllers/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "996">
+               </Location>
+               <Location
+                  uuid = "3FB634C4-2DCC-49FB-9784-848222B9E2A4 - 16f8a6c2e03c7949"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SSFS_Today.MainViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SSFS_Today.MainViewController&gt;"
+                  moduleName = "SSFS Today"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evaderryberry/Documents/SSFS_Today/SSFS%20Today/View%20Controllers/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "972">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
